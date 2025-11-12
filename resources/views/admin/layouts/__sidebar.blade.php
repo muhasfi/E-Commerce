@@ -59,27 +59,33 @@
                             </a>
                         </li>
 
-                        <li class="sidebar-item {{ request()->routeIs('admin.categories') ? 'active' : '' }}">
-                            <a href="{{ route('admin.categories.index') }}" class='sidebar-link'>
-                                <i class="bi bi-grid-fill"></i>
-                                <span>Categories</span>
+                        <li class="sidebar-item {{ request()->routeIs('admin.categories*') ? 'active' : '' }}">
+                            <a href="{{ route('admin.categories.index') }}" class="sidebar-link">
+                                <i class="bi bi-tags-fill"></i>
+                                <span>Kategori</span>
                             </a>
                         </li>
 
-                        <li class="sidebar-item {{ request()->routeIs('admin.brands') ? 'active' : '' }}">
-                            <a href="{{ route('admin.brands.index') }}" class='sidebar-link'>
-                                <i class="bi bi-grid-fill"></i>
-                                <span>Brands</span>
+                        <li class="sidebar-item {{ request()->routeIs('admin.brands*') ? 'active' : '' }}">
+                            <a href="{{ route('admin.brands.index') }}" class="sidebar-link">
+                                <i class="bi bi-building"></i>
+                                <span>Brand</span>
                             </a>
                         </li>
 
-                        <li class="sidebar-item {{ request()->routeIs('admin.products') ? 'active' : '' }}">
-                            <a href="{{ route('admin.products.index') }}" class='sidebar-link'>
-                                <i class="bi bi-grid-fill"></i>
-                                <span>Product</span>
+                        <li class="sidebar-item {{ request()->routeIs('admin.products*') ? 'active' : '' }}">
+                            <a href="{{ route('admin.products.index') }}" class="sidebar-link">
+                                <i class="bi bi-box-seam"></i>
+                                <span>Produk</span>
                             </a>
                         </li>
 
+                        <li class="sidebar-item {{ request()->routeIs('admin.banners*') ? 'active' : '' }}">
+                            <a href="{{ route('admin.banners.index') }}" class="sidebar-link">
+                                <i class="bi bi-image-fill"></i>
+                                <span>Banner</span>
+                            </a>
+                        </li>
                     </ul>
                 </div>
             </div>

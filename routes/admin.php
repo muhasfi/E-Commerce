@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\Admin\BannerController;
 use App\Http\Controllers\Admin\BrandController;
 use App\Http\Controllers\Admin\CategoryController;
 use App\Http\Controllers\Admin\ProductController;
@@ -51,6 +52,7 @@ Route::prefix('admin')->group(static function () {
         Route::resource('categories', CategoryController::class)->names('admin.categories');
         Route::resource('brands', BrandController::class)->names('admin.brands');
         Route::resource('products', ProductController::class)->names('admin.products');
+        Route::resource('banners', BannerController::class)->names('admin.banners');
     });
 });
 

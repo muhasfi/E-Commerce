@@ -28,8 +28,14 @@ class ProductController extends Controller
      */
     public function create()
     {
-        $categories = Category::all();
-        $brands = Brand::all();
+        $categories = Category::select('id', 'name')
+                            ->orderBy('name')
+                            ->get();
+                            
+        $brands = Brand::select('id', 'name')
+                    ->orderBy('name')
+                    ->get();
+        
         return view('admin.products.create', compact('categories', 'brands'));
     }
 

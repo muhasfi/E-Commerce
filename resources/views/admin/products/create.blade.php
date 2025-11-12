@@ -170,9 +170,6 @@
     </div>
 </div>
 
-{{-- ========================= --}}
-{{-- SCRIPT PREVIEW GAMBAR --}}
-{{-- ========================= --}}
 <script>
 document.addEventListener("DOMContentLoaded", function () {
     // Auto generate slug
