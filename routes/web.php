@@ -15,7 +15,12 @@ use App\Http\Controllers\ProfileController;
 */
 
 Route::get('/', [\App\Http\Controllers\SiteController::class, 'index'])->name('index');
-
+Route::get('/detail produk', function () {
+    return view('customer.produk.show');
+});
+Route::get('/kategori-produk', function () {
+    return view('customer.produk.index');
+});
 require __DIR__.'/auth.php';
 
 // Route::middleware(['auth', 'verified'])->group(function () {

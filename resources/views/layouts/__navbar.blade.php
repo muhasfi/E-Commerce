@@ -29,6 +29,7 @@
         }
 
         /* Reset & Base Styles */
+        
         * {
             margin: 0;
             padding: 0;
@@ -701,25 +702,38 @@
 <body>
     <!-- Header & Navigation -->
     <header>
-        <div class="nav-container">
-            <a href="/" class="logo">
-                <div class="logo-icon">
-                    <i class="fas fa-calculator"></i>
-                </div>
-                <div class="logo-text">
-                    <span class="logo-main">Paham Pajak</span>
-                </div>
+        <!-- <div class="nav-container"></div> -->
+          <div class="py-2 border-bottom" style="background-color: #4d84fcff; color: #000;">
+        <div class="container d-flex justify-content-center align-items-center">
+            <small>
+                📧 Email: 
+                <a href="mailto:info@pahampajak.com" class="text-decoration-none" style="color: #ffffffff;">info@pahampajak.com</a> 
+                &nbsp; | &nbsp; 
+                ☎️ Telp: 
+                <a href="tel:+6281234567890" class="text-decoration-none" style="color: #fff7f7ff;">+62 812-3456-7890</a>
+            </small>
+        </div>
+    </div>
+        <div class="nav-container mt-2">
+            <a href="/" class=" align-items-center text-decoration-none ">
+             <div class="mt-2" style="background: none;">
+                <img src="{{ asset('assets/customer/images/barcom no bg.png') }}" alt="Logo Paham Pajak" style="width: 200px; height: 200px; object-fit: contain;">
+            </div>
             </a>
-
             <ul class="nav-menu">
                 <!-- Profil / Login -->
                 <li class="nav-item">
-                @guest
+                    <li><a href="#" class="nav-link">Beranda</a></li>
+                    <li><a href="#" class="nav-link">Tentang</a></li>
+                    <li><a href="#" class="nav-link">Layanan</a></li>
+                    <li><a href="#" class="nav-link">Portfolio</a></li>
+                    <li><a href="#" class="nav-link">Kontak</a></li>
+                     @guest
                     <a href="{{ route('login') }}" class="login-btn">
                         <i class="fas fa-right-to-bracket"></i> Login
                     </a>
-                @endguest
-                @auth
+                    @endguest
+                    @auth
                     <a class="nav-link">
                         <i class="fas fa-user-circle"></i> Profile 
                         <i class="fas fa-chevron-down dropdown-chevron"></i>
