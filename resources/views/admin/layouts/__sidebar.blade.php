@@ -38,55 +38,83 @@
                         </div>
                     </div>
                 </div>
-                <div class="sidebar-menu">
-                    <ul class="menu">
-                        <div class="d-flex align-items-center justify-content-between mb-3">
-                            <span class="sidebar-title mb-0">Menu</span>
+                <ul class="menu">
 
-                            <form method="POST" action="{{ route('admin.logout') }}" class="d-inline m-0">
-                                @csrf
-                                <button type="submit" class="btn btn-outline-danger btn-sm">
-                                    <i class="bi bi-box-arrow-right"></i> Logout
-                                </button>
-                            </form>
-                        </div>
+                    <!-- Header -->
+                    <div class="d-flex align-items-center justify-content-between mb-3">
+                        <span class="sidebar-title mb-0">Menu</span>
 
-                        
-                        <li class="sidebar-item {{ request()->routeIs('admin.index') ? 'active' : '' }}">
-                            <a href="{{ route('admin.index') }}" class='sidebar-link'>
-                                <i class="bi bi-grid-fill"></i>
-                                <span>Dashboard</span>
-                            </a>
-                        </li>
+                        <form method="POST" action="{{ route('admin.logout') }}" class="d-inline m-0">
+                            @csrf
+                            <button type="submit" class="btn btn-outline-danger btn-sm">
+                                <i class="bi bi-box-arrow-right"></i> Logout
+                            </button>
+                        </form>
+                    </div>
 
-                        <li class="sidebar-item {{ request()->routeIs('admin.categories*') ? 'active' : '' }}">
-                            <a href="{{ route('admin.categories.index') }}" class="sidebar-link">
-                                <i class="bi bi-tags-fill"></i>
-                                <span>Kategori</span>
-                            </a>
-                        </li>
 
-                        <li class="sidebar-item {{ request()->routeIs('admin.brands*') ? 'active' : '' }}">
-                            <a href="{{ route('admin.brands.index') }}" class="sidebar-link">
-                                <i class="bi bi-building"></i>
-                                <span>Brand</span>
-                            </a>
-                        </li>
+                    <!-- Dashboard -->
+                    <li class="sidebar-item {{ request()->routeIs('admin.index') ? 'active' : '' }}">
+                        <a href="{{ route('admin.index') }}" class="sidebar-link">
+                            <i class="bi bi-grid-fill"></i>
+                            <span>Dashboard</span>
+                        </a>
+                    </li>
 
-                        <li class="sidebar-item {{ request()->routeIs('admin.products*') ? 'active' : '' }}">
-                            <a href="{{ route('admin.products.index') }}" class="sidebar-link">
-                                <i class="bi bi-box-seam"></i>
-                                <span>Produk</span>
-                            </a>
-                        </li>
 
-                        <li class="sidebar-item {{ request()->routeIs('admin.banners*') ? 'active' : '' }}">
-                            <a href="{{ route('admin.banners.index') }}" class="sidebar-link">
-                                <i class="bi bi-image-fill"></i>
-                                <span>Banner</span>
-                            </a>
-                        </li>
-                    </ul>
-                </div>
+                    <!-- ======================= -->
+                    <!-- 🌟 Master Data Section -->
+                    <!-- ======================= -->
+                    <li class="sidebar-title mt-4">Master Data</li>
+
+                    <li class="sidebar-item {{ request()->routeIs('admin.products*') ? 'active' : '' }}">
+                        <a href="{{ route('admin.products.index') }}" class="sidebar-link">
+                            <i class="bi bi-box-seam"></i>
+                            <span>Produk</span>
+                        </a>
+                    </li>
+
+                    <li class="sidebar-item {{ request()->routeIs('admin.categories*') ? 'active' : '' }}">
+                        <a href="{{ route('admin.categories.index') }}" class="sidebar-link">
+                            <i class="bi bi-tags-fill"></i>
+                            <span>Kategori</span>
+                        </a>
+                    </li>
+
+                    <li class="sidebar-item {{ request()->routeIs('admin.brands*') ? 'active' : '' }}">
+                        <a href="{{ route('admin.brands.index') }}" class="sidebar-link">
+                            <i class="bi bi-building"></i>
+                            <span>Brand</span>
+                        </a>
+                    </li>
+
+
+                    <!-- ======================= -->
+                    <!-- 🎯 Promosi Section -->
+                    <!-- ======================= -->
+                    <li class="sidebar-title mt-4">Promosi</li>
+
+                    <li class="sidebar-item {{ request()->routeIs('admin.banners*') ? 'active' : '' }}">
+                        <a href="{{ route('admin.banners.index') }}" class="sidebar-link">
+                            <i class="bi bi-image-fill"></i>
+                            <span>Banner</span>
+                        </a>
+                    </li>
+
+
+                    <!-- ======================= -->
+                    <!-- 📄 Dokumen Section -->
+                    <!-- ======================= -->
+                    <li class="sidebar-title mt-4">Dokumen</li>
+
+                    <li class="sidebar-item {{ request()->routeIs('admin.price_lists*') ? 'active' : '' }}">
+                        <a href="{{ route('admin.price_lists.index') }}" class="sidebar-link">
+                            <i class="bi bi-file-earmark-text"></i>
+                            <span>Price List</span>
+                        </a>
+                    </li>
+
+                </ul>
+
             </div>
         </div>

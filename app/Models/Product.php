@@ -21,6 +21,9 @@ class Product extends Model
         'discount_price',
         'stock',
         'image',
+        'is_best_seller',
+        'is_power_deals',
+        'is_special',
         'is_active',
     ];
 

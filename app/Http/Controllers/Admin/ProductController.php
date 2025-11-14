@@ -64,7 +64,7 @@ class ProductController extends Controller
                 ? $request->file('image')->store('products', 'public')
                 : null;
 
-            // Simpan produk
+           // Simpan produk
             $product = Product::create([
                 'category_id'    => $request->category_id,
                 'brand_id'       => $request->brand_id,
@@ -75,7 +75,13 @@ class ProductController extends Controller
                 'discount_price' => $request->discount_price,
                 'image'          => $mainImage,
                 'is_active'      => $request->boolean('is_active', true),
+
+                // NEW FLAG FIELDS
+                'is_best_seller' => $request->boolean('is_best_seller', false),
+                'is_power_deals' => $request->boolean('is_power_deals', false),
+                'is_special'     => $request->boolean('is_special', false),
             ]);
+
 
             // Simpan multiple image (gallery)
             if ($request->hasFile('images')) {
@@ -151,7 +157,7 @@ class ProductController extends Controller
             }
 
             // Update field lain
-            $product->update([
+           $product->update([
                 'category_id'    => $request->category_id,
                 'brand_id'       => $request->brand_id,
                 'name'           => $request->name,
@@ -161,7 +167,13 @@ class ProductController extends Controller
                 'discount_price' => $request->discount_price,
                 'image'          => $product->image,
                 'is_active'      => $request->boolean('is_active', true),
+
+                // NEW FLAG FIELDS
+                'is_best_seller' => $request->boolean('is_best_seller', false),
+                'is_power_deals' => $request->boolean('is_power_deals', false),
+                'is_special'     => $request->boolean('is_special', false),
             ]);
+
 
             // Upload gambar tambahan baru
             if ($request->hasFile('images')) {

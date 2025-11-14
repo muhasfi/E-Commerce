@@ -160,6 +160,52 @@
                     </div>
                 </div>
 
+                {{-- Best Seller --}}
+                <div class="col-md-6 mb-3">
+                    <label class="form-label">Best Seller</label>
+                    <div class="form-check form-switch">
+                        <input type="hidden" name="is_best_seller" value="0">
+                        <input 
+                            type="checkbox" 
+                            class="form-check-input" 
+                            name="is_best_seller" 
+                            value="1"
+                            {{ old('is_best_seller') ? 'checked' : '' }}>
+                        <label class="form-check-label">Tandai sebagai Best Seller</label>
+                    </div>
+                </div>
+
+                {{-- Power Deals --}}
+                <div class="col-md-6 mb-3">
+                    <label class="form-label">Power Deals</label>
+                    <div class="form-check form-switch">
+                        <input type="hidden" name="is_power_deals" value="0">
+                        <input 
+                            type="checkbox" 
+                            class="form-check-input" 
+                            name="is_power_deals" 
+                            value="1"
+                            {{ old('is_power_deals') ? 'checked' : '' }}>
+                        <label class="form-check-label">Tandai sebagai Power Deals</label>
+                    </div>
+                </div>
+
+                {{-- Special For You --}}
+                <div class="col-md-6 mb-3">
+                    <label class="form-label">Special For You</label>
+                    <div class="form-check form-switch">
+                        <input type="hidden" name="is_special" value="0">
+                        <input 
+                            type="checkbox" 
+                            class="form-check-input" 
+                            name="is_special" 
+                            value="1"
+                            {{ old('is_special') ? 'checked' : '' }}>
+                        <label class="form-check-label">Tandai sebagai Special Product</label>
+                    </div>
+                </div>
+
+
                 {{-- Tombol --}}
                 <div class="col-12 mt-3 d-flex justify-content-end">
                     <a href="{{ route('admin.products.index') }}" class="btn btn-secondary me-2">Batal</a>

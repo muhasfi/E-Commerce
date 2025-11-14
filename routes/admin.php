@@ -3,8 +3,8 @@
 use App\Http\Controllers\Admin\BannerController;
 use App\Http\Controllers\Admin\BrandController;
 use App\Http\Controllers\Admin\CategoryController;
+use App\Http\Controllers\Admin\PriceListController;
 use App\Http\Controllers\Admin\ProductController;
-use App\Http\Controllers\Admin\ProductImageController;
 use App\Http\Controllers\Admin\UserController;
 use Illuminate\Support\Facades\Route;
 
@@ -53,6 +53,7 @@ Route::prefix('admin')->group(static function () {
         Route::resource('brands', BrandController::class)->names('admin.brands');
         Route::resource('products', ProductController::class)->names('admin.products');
         Route::resource('banners', BannerController::class)->names('admin.banners');
+        Route::resource('price_lists', PriceListController::class)->names('admin.price_lists');
     });
 });
 
