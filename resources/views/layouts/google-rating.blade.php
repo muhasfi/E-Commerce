@@ -13,7 +13,7 @@
                     <i class="bi bi-star-half text-warning fs-5"></i>
                 </div>
                 <p class="mb-2">Berdasarkan <strong>18.247</strong> ulasan</p>
-                <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/5/53/Google_%22G%22_Logo.svg/512px-Google_%22G%22_Logo.svg.png" alt="Google" width="100">
+                <img src="{{ asset('assets/customer/images/google.png') }}" alt="Google" width="20">
             </div>
 
             <!-- Bagian kanan -->

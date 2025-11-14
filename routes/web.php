@@ -21,6 +21,12 @@ Route::get('/detail produk', function () {
 Route::get('/kategori-produk', function () {
     return view('customer.produk.index');
 });
+Route::get('/hubungi_kami', function () {
+    return view('customer.kontak.index');
+});
+Route::get('/tentang', function () {
+    return view('customer.about.index');
+});
 require __DIR__.'/auth.php';
 
 // Route::middleware(['auth', 'verified'])->group(function () {

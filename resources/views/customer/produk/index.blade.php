@@ -7,7 +7,7 @@
         }
         
         :root {
-            --primary: #2563eb;
+            --primary: #1b1d22ff;
             --primary-dark: #1e40af;
             --secondary: #10b981;
             --dark: #1e293b;
@@ -596,11 +596,6 @@
             <p>Maaf, tidak ada produk yang sesuai dengan pencarian Anda.</p>
         </div>
     </div>
-    
-    <footer>
-        <p>&copy; 2024 ElectroShop. Semua hak dilindungi. Toko Elektronik Terpercaya Indonesia.</p>
-    </footer>
-
     <script>
         const products = [
             { id: 1, title: "iPhone 14 Pro", category: "smartphone", price: 18999000, image: "https://images.unsplash.com/photo-1592750475338-74b7b21085ab?w=800&q=80", badge: "Terlaris" },
