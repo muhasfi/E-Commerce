@@ -701,8 +701,16 @@
 @section('content')
 <main>
     
-   
-   
+    <!-- Hero/ Caraousel -->
+        @include('layouts.carousel')
+        <!-- rating google -->
+        @include('layouts.google-rating')
+        <!-- Kategori -->
+        @include('layouts.categories')
+        <!-- hot produk -->
+        @include('layouts.hot_produk')
+        <!-- kelebihan -->
+        @include('layouts.kelebihan')
 </main>
 @endsection
 

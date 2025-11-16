@@ -344,7 +344,7 @@
         .product-price {
             font-size: 1.4rem;
             font-weight: 800;
-            color: var(--primary-color);
+            color:  #0f0f0eff;
         }
         
         .discount {
@@ -355,7 +355,7 @@
         }
 
         .add-to-cart {
-            background: linear-gradient(135deg, var(--primary-color), var(--primary-dark));
+            background:  #d97706;
             color: white;
             border: none;
             padding: 0.75rem 1.5rem;
@@ -516,7 +516,6 @@
         <section class="mb-5">
             <div class="section-header">
                 <h2 class="section-title">Produk Best Seller</h2>
-                <p class="section-subtitle">Produk pilihan dengan penjualan tertinggi dan rating terbaik</p>
             </div>
             
             <div class="products-grid">
@@ -533,19 +532,15 @@
                     <div class="product-info">
                         <div class="product-category">Smartphone</div>
                         <h3 class="product-title">Smartphone X1 Pro</h3>
+                        <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Quas a, est a
+                            speriores ratione molestiae minima impedit laboriosam dolores, totam repellat voluptatem 
+                            vero deserunt inventore beatae vitae culpa error esse illum.</p>
                         <div class="product-features">
                             <span class="feature-tag">Layar 6.7"</span>
                             <span class="feature-tag">RAM 8GB</span>
                             <span class="feature-tag">Kamera 108MP</span>
                         </div>
-                        <div class="rating">
-                            <i class="fas fa-star"></i>
-                            <i class="fas fa-star"></i>
-                            <i class="fas fa-star"></i>
-                            <i class="fas fa-star"></i>
-                            <i class="fas fa-star-half-alt"></i>
-                            <span class="rating-text ms-2">4.5 (324 ulasan)</span>
-                        </div>
+                        
                         <div class="product-footer">
                             <div>
                                 <div class="product-price">Rp 5.999.000</div>
@@ -571,19 +566,15 @@
                     <div class="product-info">
                         <div class="product-category">Laptop</div>
                         <h3 class="product-title">Laptop Ultra Pro 15</h3>
+                           <p class>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Quas a, est a
+                            speriores ratione molestiae minima impedit laboriosam dolores, totam repellat voluptatem 
+                            vero deserunt inventore beatae vitae culpa error esse illum.</p>
                         <div class="product-features">
                             <span class="feature-tag">Intel i7</span>
                             <span class="feature-tag">16GB RAM</span>
                             <span class="feature-tag">SSD 512GB</span>
                         </div>
-                        <div class="rating">
-                            <i class="fas fa-star"></i>
-                            <i class="fas fa-star"></i>
-                            <i class="fas fa-star"></i>
-                            <i class="fas fa-star"></i>
-                            <i class="fas fa-star"></i>
-                            <span class="rating-text ms-2">5.0 (567 ulasan)</span>
-                        </div>
+                        
                         <div class="product-footer">
                             <div>
                                 <div class="product-price">Rp 14.999.000</div>
@@ -609,19 +600,15 @@
                     <div class="product-info">
                         <div class="product-category">Audio</div>
                         <h3 class="product-title">Wireless Earbuds Pro</h3>
+                             <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Quas a, est a
+                            speriores ratione molestiae minima impedit laboriosam dolores, totam repellat voluptatem 
+                            vero deserunt inventore beatae vitae culpa error esse illum.</p>
                         <div class="product-features">
                             <span class="feature-tag">Noise Cancelling</span>
                             <span class="feature-tag">Baterai 30 jam</span>
                             <span class="feature-tag">Bluetooth 5.2</span>
                         </div>
-                        <div class="rating">
-                            <i class="fas fa-star"></i>
-                            <i class="fas fa-star"></i>
-                            <i class="fas fa-star"></i>
-                            <i class="fas fa-star"></i>
-                            <i class="far fa-star"></i>
-                            <span class="rating-text ms-2">4.0 (189 ulasan)</span>
-                        </div>
+                     
                         <div class="product-footer">
                             <div>
                                 <div class="product-price">Rp 1.499.000</div>
@@ -633,44 +620,7 @@
                         </div>
                     </div>
                 </div>
-                
-                <!-- Product 4 -->
-                <div class="product-card">
-                    <div class="product-badge">Best Seller</div>
-                    <div class="product-image">
-                        <img src="https://images.unsplash.com/photo-1579586337278-3befd40fd17a?w=400" alt="Smart Watch">
-                        <div class="product-actions">
-                            <button class="action-btn" title="Tambah ke Wishlist"><i class="far fa-heart"></i></button>
-                            <button class="action-btn" title="Lihat Detail"><i class="far fa-eye"></i></button>
-                        </div>
-                    </div>
-                    <div class="product-info">
-                        <div class="product-category">Wearable</div>
-                        <h3 class="product-title">Smart Watch Series 5</h3>
-                        <div class="product-features">
-                            <span class="feature-tag">Layar AMOLED</span>
-                            <span class="feature-tag">Monitor Kesehatan</span>
-                            <span class="feature-tag">Tahan Air</span>
-                        </div>
-                        <div class="rating">
-                            <i class="fas fa-star"></i>
-                            <i class="fas fa-star"></i>
-                            <i class="fas fa-star"></i>
-                            <i class="fas fa-star"></i>
-                            <i class="fas fa-star-half-alt"></i>
-                            <span class="rating-text ms-2">4.5 (412 ulasan)</span>
-                        </div>
-                        <div class="product-footer">
-                            <div>
-                                <div class="product-price">Rp 2.999.000</div>
-                                <div class="discount">Rp 3.499.000</div>
-                            </div>
-                            <button class="add-to-cart">
-                                <i class="fas fa-shopping-cart"></i>Keranjang
-                            </button>
-                        </div>
-                    </div>
-                </div>
+            
             </div>
         </section>
     </div>

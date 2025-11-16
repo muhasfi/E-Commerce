@@ -6,9 +6,12 @@
             <div class="carousel-item active" style="background-image: url('{{ asset('assets/customer/images/laptop.jpg') }}');background-size: cover; background-position: center; height: 100vh;">
                 <div class="carousel-container d-flex justify-content-center align-items-center text-center text-white" style="background: rgba(0, 0, 0, 0.5); height: 100%;">
                     <div>
-                        <h1 class="display-4 fw-bold">Solusi Laptop Terbaik untuk Produktivitas Anda</h1>
-                        <p class="lead">Temukan berbagai pilihan laptop berkualitas tinggi untuk kebutuhan kerja, belajar, dan hiburan. </p>
-                        <p class="lead">Dapatkan performa cepat, desain modern, dan layanan purna jual terpercaya.</p>
+                        <h1 class="display-4 fw-bold">Solusi Laptop Terbaik Anda</h1>
+                          <p class="lead">Lorem, ipsum dolor sit amet consectetur adipisicing elit.</p>
+                        <p>  Aliquid animi tempora voluptate qui. 
+                            Voluptates impedit iusto sunt quidem sint tenetur odio quia deleniti debitis nulla,</p>
+                        <p> vitae architecto ratione unde exercitationem.</p>
+                        <!-- <p class="lead">Dapatkan performa cepat, desain modern, dan layanan purna jual terpercaya.</p> -->
                        
                     </div>
                 </div>
@@ -18,9 +21,12 @@
            <div class="carousel-item active" style="background-image: url('{{ asset('assets/customer/images/cctv.jpg') }}');background-size: cover; background-position: center; height: 100vh;">
                 <div class="carousel-container d-flex justify-content-center align-items-center text-center text-white" style="background: rgba(0, 0, 0, 0.5); height: 100%;">
                     <div>
-                        <h1 class="display-4 fw-bold">Keamanan Maksimal dengan Teknologi Terkini</h1>
-                        <p class="lead">Pantau rumah dan tempat usaha Anda kapan saja dan di mana saja. </p>
-                         <p class="lead">Sistem CCTV kami menawarkan kualitas gambar jernih dan fitur pemantauan jarak jauh yang mudah digunakan.</p>
+                        <h1 class="display-4 fw-bold">Keamanan Maksimal </h1>
+                         <p class="lead">Lorem, ipsum dolor sit amet consectetur adipisicing elit.</p>
+                        <p>  Aliquid animi tempora voluptate qui. 
+                            Voluptates impedit iusto sunt quidem sint tenetur odio quia deleniti debitis nulla,</p>
+                        <p> vitae architecto ratione unde exercitationem.</p>
+                       
                       
                     </div>
                 </div>
@@ -31,9 +37,10 @@
                 <div class="carousel-container d-flex justify-content-center align-items-center text-center text-white" style="background: rgba(0, 0, 0, 0.5); height: 100%;">
                     <div>
                         <h1 class="display-4 fw-bold">Internet Cepat dan Stabil</h1>
-                        <p class="lead">Nikmati koneksi tanpa hambatan dengan layanan instalasi dan perangkat WiFi berkinerja tinggi</p>
-                            <p class="lead">Cocok untuk rumah, kantor, dan bisnis yang membutuhkan akses internet lancar.</p>
-                
+                        <p class="lead">Lorem, ipsum dolor sit amet consectetur adipisicing elit.</p>
+                        <p>  Aliquid animi tempora voluptate qui. 
+                            Voluptates impedit iusto sunt quidem sint tenetur odio quia deleniti debitis nulla,</p>
+                        <p> vitae architecto ratione unde exercitationem.</p>
                     </div>
                 </div>
             </div>

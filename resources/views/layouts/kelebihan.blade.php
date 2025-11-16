@@ -47,7 +47,7 @@
         .feature-icon {
             font-size: 2.5rem;
             margin-bottom: 15px;
-            color: #FFD700; /* Warna kuning */
+            color: #d97706; /* Warna kuning */
             text-shadow: 0 2px 4px rgba(0,0,0,0.1);
         }
         .card-title {
@@ -66,8 +66,7 @@
 </head>
 <body>
     <div class="container">
-        <h2 class="section-title">Kenapa harus membeli di Barcom? </h2>
-        
+        <h2 class="section-title mt-2">Kenapa harus membeli di Barcom? </h2>
         <div class="row g-4">
             <!-- Card 1 -->
             <div class="col-md-6 col-lg-4">

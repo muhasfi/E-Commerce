@@ -1,350 +1,182 @@
-<!DOCTYPE html>
-<html lang="id">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Hubungi Kami - Perusahaan Teknologi</title>
-    <!-- Bootstrap CSS -->
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet">
-    <!-- Font Awesome -->
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+@extends('layouts.master')
+
+@section('title', 'Tentang Kami - Barcom')
+
+@section('style')
 
     <style>
         :root {
-            --primary-color: #1a1a2e;
-            --secondary-color: #ffd700;
-            --accent-color: #ff6b6b;
-            --text-light: #f8f9fa;
-            --text-dark: #333;
-        }
-        
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
+            --primary-color: #f59e0b;
+            --primary-hover: #e6900b;
+            --shadow-color: rgba(0, 0, 0, 0.1);
+            --focus-color: #6a11cb;
+            --focus-shadow: rgba(106, 17, 203, 0.25);
         }
         
         body {
+            background-color: #f8f9fa;
             font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-            background-color: var(--primary-color);
-            color: var(--text-light);
-            overflow-x: hidden;
-            min-height: 100vh;
         }
         
-        .hero-section {
-            position: relative;
-            min-height: 100vh;
-            display: flex;
-            align-items: center;
-            overflow: hidden;
-        }
-        
-        .background-container {
-            position: absolute;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            z-index: 1;
-        }
-        
-        .laptop-bg {
-            position: absolute;
-            top: 50%;
-            left: 50%;
-            transform: translate(-50%, -50%);
-            width: 80%;
-            max-width: 900px;
-            height: 60%;
-            background-image: url('https://images.unsplash.com/photo-1593640408182-31c70c8268f5?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1200&q=80');
-            background-size: cover;
-            background-position: center;
-            border-radius: 20px;
-            box-shadow: 0 0 50px rgba(255, 215, 0, 0.3);
-            z-index: 2;
-        }
-        
-        .smoke-overlay {
-            position: absolute;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            background: 
-                radial-gradient(circle at 20% 50%, rgba(255, 215, 0, 0.2) 0%, transparent 50%),
-                radial-gradient(circle at 80% 20%, rgba(255, 215, 0, 0.15) 0%, transparent 50%),
-                radial-gradient(circle at 40% 80%, rgba(255, 215, 0, 0.1) 0%, transparent 50%);
-            animation: smokeAnimation 15s infinite alternate;
-            z-index: 3;
-        }
-        
-        @keyframes smokeAnimation {
-            0% {
-                background-position: 0% 0%;
-            }
-            100% {
-                background-position: 100% 100%;
-            }
-        }
-        
-        .content-container {
-            position: relative;
-            z-index: 10;
-            width: 100%;
+        .contact-section {
+            padding: 80px 0;
         }
         
         .contact-card {
-            background: rgba(26, 26, 46, 0.85);
-            backdrop-filter: blur(10px);
-            border-radius: 20px;
-            border: 1px solid rgba(255, 215, 0, 0.2);
-            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
+            border-radius: 15px;
+            box-shadow: 0 10px 30px var(--shadow-color);
             overflow: hidden;
-            transition: transform 0.3s ease;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
         }
         
         .contact-card:hover {
             transform: translateY(-5px);
+            box-shadow: 0 15px 40px rgba(0, 0, 0, 0.15);
         }
         
-        .card-header {
-            background: linear-gradient(135deg, rgba(255, 215, 0, 0.1) 0%, rgba(255, 107, 107, 0.1) 100%);
-            border-bottom: 1px solid rgba(255, 215, 0, 0.3);
-            padding: 2rem;
+        .contact-header {
+            background: var(--primary-color);
+            background: linear-gradient(135deg, var(--primary-color) 0%, #e6900b 100%);
+            color: white;
+            padding: 40px 30px;
+            text-align: center;
+        }
+        
+        .contact-form {
+            padding: 40px;
+            background-color: white;
         }
         
         .form-control {
-            background-color: rgba(255, 255, 255, 0.1);
-            border: 1px solid rgba(255, 215, 0, 0.3);
-            color: var(--text-light);
+            border-radius: 8px;
             padding: 12px 15px;
-            border-radius: 10px;
             transition: all 0.3s ease;
         }
         
         .form-control:focus {
-            background-color: rgba(255, 255, 255, 0.15);
-            border-color: var(--secondary-color);
-            box-shadow: 0 0 0 0.25rem rgba(255, 215, 0, 0.25);
-            color: var(--text-light);
+            border-color: var(--focus-color);
+            box-shadow: 0 0 0 0.25rem var(--focus-shadow);
         }
         
-        .form-control::placeholder {
-            color: rgba(255, 255, 255, 0.6);
+        .input-group-text {
+            background-color: #f8f9fa;
+            border-radius: 8px 0 0 8px;
+        }
+        
+        .btn-primary {
+            background: var(--primary-color);
+            border: none;
+            border-radius: 8px;
+            padding: 12px 30px;
+            font-weight: 600;
+            transition: all 0.3s ease;
+        }
+        
+        .btn-primary:hover {
+            background: var(--primary-hover);
+            transform: translateY(-2px);
+            box-shadow: 0 5px 15px rgba(245, 158, 11, 0.4);
         }
         
         .form-label {
-            color: var(--secondary-color);
-            font-weight: 600;
+            color: #495057;
             margin-bottom: 8px;
-        }
-        
-        .btn-gold {
-            background: linear-gradient(135deg, var(--secondary-color), #ffed4e);
-            color: var(--primary-color);
-            border: none;
-            padding: 12px 30px;
-            border-radius: 10px;
             font-weight: 600;
-            transition: all 0.3s ease;
-            width: 100%;
         }
         
-        .btn-gold:hover {
-            background: linear-gradient(135deg, #ffed4e, var(--secondary-color));
-            transform: translateY(-2px);
-            box-shadow: 0 5px 15px rgba(255, 215, 0, 0.4);
+        .alert {
+            border-radius: 8px;
+            border: none;
         }
         
-        .contact-info {
-            padding: 2rem;
-            background: rgba(255, 255, 255, 0.05);
-            border-radius: 15px;
-            margin-top: 2rem;
+        /* Animasi untuk feedback */
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(-10px); }
+            to { opacity: 1; transform: translateY(0); }
         }
         
-        .info-item {
-            display: flex;
-            align-items: center;
-            margin-bottom: 1.5rem;
+        .fade-in {
+            animation: fadeIn 0.5s ease forwards;
         }
         
-        .info-icon {
-            width: 50px;
-            height: 50px;
-            background: rgba(255, 215, 0, 0.1);
-            border-radius: 50%;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            margin-right: 15px;
-            color: var(--secondary-color);
-            font-size: 1.2rem;
-        }
-        
-        .floating-element {
-            position: absolute;
-            background: rgba(255, 215, 0, 0.1);
-            border-radius: 50%;
-            animation: float 6s ease-in-out infinite;
-            z-index: 4;
-        }
-        
-        .floating-element:nth-child(1) {
-            width: 80px;
-            height: 80px;
-            top: 10%;
-            left: 5%;
-            animation-delay: 0s;
-        }
-        
-        .floating-element:nth-child(2) {
-            width: 120px;
-            height: 120px;
-            top: 70%;
-            left: 10%;
-            animation-delay: 2s;
-        }
-        
-        .floating-element:nth-child(3) {
-            width: 60px;
-            height: 60px;
-            top: 20%;
-            right: 10%;
-            animation-delay: 4s;
-        }
-        
-        .floating-element:nth-child(4) {
-            width: 100px;
-            height: 100px;
-            top: 60%;
-            right: 5%;
-            animation-delay: 1s;
-        }
-        
-        @keyframes float {
-            0% {
-                transform: translateY(0) rotate(0deg);
-            }
-            50% {
-                transform: translateY(-20px) rotate(10deg);
-            }
-            100% {
-                transform: translateY(0) rotate(0deg);
-            }
-        }
-        
-        .section-title {
-            color: var(--secondary-color);
-            font-weight: 700;
-            margin-bottom: 1.5rem;
-            position: relative;
-            display: inline-block;
-        }
-        
-        .section-title::after {
-            content: '';
-            position: absolute;
-            bottom: -10px;
-            left: 0;
-            width: 50px;
-            height: 3px;
-            background: var(--secondary-color);
-            border-radius: 3px;
-        }
-        
-        /* PERBAIKAN: Menambahkan style untuk ikon kuning */
-        .text-gold {
-            color: var(--secondary-color) !important;
-        }
-        
-        /* Style untuk input group agar lebih konsisten */
-        .input-group-text {
-            border: 1px solid rgba(255, 215, 0, 0.3) !important;
-            border-right: none !important;
-            background-color: rgba(255, 255, 255, 0.05) !important;
-            color: var(--secondary-color) !important;
-        }
-        
-        .border-start-0 {
-            border-left: none !important;
-        }
-        
+        /* Responsif untuk mobile */
         @media (max-width: 768px) {
-            .laptop-bg {
-                width: 95%;
-                height: 50%;
+            .contact-section {
+                padding: 40px 0;
             }
             
-            .floating-element {
-                display: none;
+            .contact-header {
+                padding: 30px 20px;
+            }
+            
+            .contact-form {
+                padding: 30px 20px;
+            }
+            
+            .contact-header h1 {
+                font-size: 1.8rem;
             }
         }
     </style>
-</head>
+@endsection
 <body>
-    <section class="hero-section">
-        <!-- Background Elements -->
-        <div class="background-container">
-            <div class="laptop-bg"></div>
-            <div class="smoke-overlay"></div>
-            <div class="floating-element"></div>
-            <div class="floating-element"></div>
-            <div class="floating-element"></div>
-            <div class="floating-element"></div>
-        </div>
-        
-        <!-- Main Content -->
-        <div class="container content-container">
-            <div class="row justify-content-center align-items-center">
+    <!-- Section Hubungi Kami -->
+    <section class="contact-section">
+        <div class="container">
+            <div class="row justify-content-center">
                 <div class="col-lg-8 col-md-10">
                     <div class="contact-card">
-                        <div class="card-header text-center">
-                            <h1 class="section-title">Hubungi Kami</h1>
-                            <p class="mb-0">Tim profesional kami siap membantu mewujudkan solusi teknologi untuk bisnis Anda</p>
+                        <!-- Header -->
+                        <div class="contact-header">
+                            <h1 class="display-5 fw-bold mb-3">Hubungi Kami</h1>
+                            <p class="lead mb-0">Kami siap membantu Anda. Silakan isi form di bawah ini dan kami akan merespons secepatnya.</p>
                         </div>
                         
-                        <div class="card-body p-4 p-md-5">
-                            <form id="contactForm">
-                                <div class="row">
-                                    <div class="col-md-12 mb-4">
-                                        <label for="name" class="form-label">Nama Lengkap</label>
-                                        <div class="input-group">
-                                            <span class="input-group-text bg-transparent border-end-0">
-                                                <i class="fas fa-user text-gold"></i>
-                                            </span>
-                                            <input type="text" class="form-control border-start-0" id="name" placeholder="Masukkan nama lengkap Anda" required>
+                        <!-- Form -->
+                        <div class="contact-form">
+                            <form id="contactForm" novalidate>
+                                <div class="mb-4">
+                                    <label for="nama" class="form-label">Nama Lengkap</label>
+                                    <div class="input-group">
+                                        <span class="input-group-text"><i class="fas fa-user"></i></span>
+                                        <input type="text" class="form-control" id="nama" placeholder="Masukkan nama lengkap Anda" required>
+                                        <div class="invalid-feedback">
+                                            Harap masukkan nama lengkap Anda.
                                         </div>
-                                    </div>
-                                    
-                                    <div class="col-md-12 mb-4">
-                                        <label for="email" class="form-label">Alamat Email</label>
-                                        <div class="input-group">
-                                            <span class="input-group-text bg-transparent border-end-0">
-                                                <i class="fas fa-envelope text-gold"></i>
-                                            </span>
-                                            <input type="email" class="form-control border-start-0" id="email" placeholder="nama@contoh.com" required>
-                                        </div>
-                                    </div>
-                                    
-                                    <div class="col-12 mb-4">
-                                        <label for="message" class="form-label">Pesan</label>
-                                        <div class="input-group">
-                                            <span class="input-group-text bg-transparent border-end-0 align-items-start pt-3">
-                                                <i class="fas fa-comment text-gold"></i>
-                                            </span>
-                                            <textarea class="form-control border-start-0" id="message" rows="5" placeholder="Jelaskan kebutuhan atau pertanyaan Anda..." required></textarea>
-                                        </div>
-                                    </div>
-                                    
-                                    <div class="col-12 mb-3">
-                                        <button type="submit" class="btn btn-gold">
-                                            <i class="fas fa-paper-plane me-2"></i> Kirim Pesan
-                                        </button>
                                     </div>
                                 </div>
+                                
+                                <div class="mb-4">
+                                    <label for="email" class="form-label">Alamat Email</label>
+                                    <div class="input-group">
+                                        <span class="input-group-text"><i class="fas fa-envelope"></i></span>
+                                        <input type="email" class="form-control" id="email" placeholder="nama@contoh.com" required>
+                                        <div class="invalid-feedback">
+                                            Harap masukkan alamat email yang valid.
+                                        </div>
+                                    </div>
+                                </div>
+                                
+                                <div class="mb-4">
+                                    <label for="pesan" class="form-label">Isi Pesan</label>
+                                    <div class="input-group">
+                                        <span class="input-group-text align-items-start pt-3"><i class="fas fa-comment"></i></span>
+                                        <textarea class="form-control" id="pesan" rows="5" placeholder="Tulis pesan Anda di sini..." required></textarea>
+                                        <div class="invalid-feedback">
+                                            Harap tulis pesan Anda.
+                                        </div>
+                                    </div>
+                                </div>
+                                
+                                <div class="d-grid">
+                                    <button type="submit" class="btn btn-primary btn-lg">
+                                        <i class="fas fa-paper-plane me-2"></i>Kirim Pesan
+                                    </button>
+                                </div>
                             </form>
+                            
+                            <!-- Alert untuk feedback -->
+                            <div id="alertContainer" class="mt-4"></div>
                         </div>
                     </div>
                 </div>
@@ -352,41 +184,87 @@
         </div>
     </section>
 
-    <!-- Bootstrap JS -->
+    <!-- Bootstrap JS dengan Popper -->
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"></script>
     
-    <!-- Form Validation Script -->
+    <!-- JavaScript untuk validasi form -->
     <script>
-        document.getElementById('contactForm').addEventListener('submit', function(event) {
-            event.preventDefault();
+        document.addEventListener('DOMContentLoaded', function() {
+            const contactForm = document.getElementById('contactForm');
+            const alertContainer = document.getElementById('alertContainer');
             
-            // Validasi sederhana
-            const name = document.getElementById('name').value;
-            const email = document.getElementById('email').value;
-            const message = document.getElementById('message').value;
-            
-            if (name && email && message) {
-                // Simulasi pengiriman form
-                alert('Terima kasih! Pesan Anda telah berhasil dikirim. Kami akan segera menghubungi Anda.');
-                document.getElementById('contactForm').reset();
-            } else {
-                alert('Harap lengkapi semua field yang diperlukan.');
+            // Fungsi untuk menampilkan alert
+            function showAlert(message, type) {
+                const alertDiv = document.createElement('div');
+                alertDiv.className = `alert alert-${type} fade-in`;
+                alertDiv.innerHTML = `
+                    <div class="d-flex align-items-center">
+                        <i class="fas ${type === 'success' ? 'fa-check-circle' : 'fa-exclamation-circle'} me-2"></i>
+                        <span>${message}</span>
+                    </div>
+                `;
+                
+                alertContainer.innerHTML = '';
+                alertContainer.appendChild(alertDiv);
+                
+                // Hapus alert setelah 5 detik
+                setTimeout(() => {
+                    alertDiv.remove();
+                }, 5000);
             }
-        });
-        
-        // Efek tambahan untuk input
-        const inputs = document.querySelectorAll('.form-control');
-        inputs.forEach(input => {
-            input.addEventListener('focus', function() {
-                this.parentElement.classList.add('focused');
+            
+            // Validasi form
+            contactForm.addEventListener('submit', function(event) {
+                event.preventDefault();
+                event.stopPropagation();
+                
+                // Reset validasi sebelumnya
+                const formInputs = contactForm.querySelectorAll('.form-control');
+                formInputs.forEach(input => {
+                    input.classList.remove('is-invalid');
+                });
+                
+                // Cek validitas form
+                if (!contactForm.checkValidity()) {
+                    // Tandai field yang tidak valid
+                    formInputs.forEach(input => {
+                        if (!input.checkValidity()) {
+                            input.classList.add('is-invalid');
+                        }
+                    });
+                    
+                    showAlert('Harap lengkapi semua field dengan benar sebelum mengirim pesan.', 'danger');
+                    return;
+                }
+                
+                // Ambil nilai dari form
+                const nama = document.getElementById('nama').value;
+                const email = document.getElementById('email').value;
+                const pesan = document.getElementById('pesan').value;
+                
+                // Simulasi pengiriman data (dalam aplikasi nyata, ini akan dikirim ke server)
+                setTimeout(() => {
+                    // Tampilkan alert sukses
+                    showAlert(`Terima kasih, ${nama}! Pesan Anda telah berhasil dikirim. Kami akan merespons ke ${email} secepatnya.`, 'success');
+                    
+                    // Reset form
+                    contactForm.reset();
+                    contactForm.classList.remove('was-validated');
+                }, 1000);
             });
             
-            input.addEventListener('blur', function() {
-                if (this.value === '') {
-                    this.parentElement.classList.remove('focused');
-                }
+            // Validasi real-time
+            const inputs = contactForm.querySelectorAll('input, textarea');
+            inputs.forEach(input => {
+                input.addEventListener('input', function() {
+                    if (this.checkValidity()) {
+                        this.classList.remove('is-invalid');
+                        this.classList.add('is-valid');
+                    } else {
+                        this.classList.remove('is-valid');
+                    }
+                });
             });
         });
     </script>
 </body>
-</html>

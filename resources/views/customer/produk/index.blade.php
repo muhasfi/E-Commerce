@@ -1,3 +1,10 @@
+@extends('layouts.master')
+
+@section('title', 'Produk - Barcom')
+
+@section('style')
+<!DOCTYPE html>
+
     <style>
         * {
             margin: 0;
@@ -8,13 +15,13 @@
         
         :root {
             --primary: #1b1d22ff;
-            --primary-dark: #1e40af;
+            --primary-dark:  #1b1d22ff;
             --secondary: #10b981;
             --dark: #1e293b;
             --light: #f8fafc;
             --border: #e2e8f0;
             --shadow: rgba(0, 0, 0, 0.1);
-            --gradient: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            --gradient:#f59e0b;
         }
         
         body {
@@ -192,14 +199,14 @@
         }
         
         .filter-tag:hover {
-            border-color: var(--primary);
-            background: #eff6ff;
+            /* border-color: var(--primary); */
+            background: #f59e0b;
         }
         
         .filter-tag.active {
-            background: var(--primary);
+            background: #f59e0b;
             color: white;
-            border-color: var(--primary);
+            border-color: #b8b5b1b7;
         }
         
         .sort-select {
@@ -215,34 +222,6 @@
         
         .sort-select:focus {
             border-color: var(--primary);
-        }
-        
-        /* Stats */
-        .stats {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-            gap: 1rem;
-            margin-bottom: 2rem;
-        }
-        
-        .stat-card {
-            background: white;
-            padding: 1.5rem;
-            border-radius: 15px;
-            box-shadow: 0 2px 8px var(--shadow);
-            text-align: center;
-        }
-        
-        .stat-value {
-            font-size: 2rem;
-            font-weight: 800;
-            color: var(--primary);
-        }
-        
-        .stat-label {
-            color: #64748b;
-            font-size: 0.9rem;
-            margin-top: 0.25rem;
         }
         
         /* Products Grid */
@@ -361,7 +340,7 @@
         }
         
         .product-category {
-            color: var(--primary);
+            color: #1b1d22ff;
             font-size: 0.8rem;
             text-transform: uppercase;
             font-weight: 700;
@@ -401,9 +380,9 @@
         }
         
         .product-price {
-            font-size: 1.4rem;
+            font-size: 1.2rem;
             font-weight: 800;
-            color: var(--primary);
+            color: #1b1d22ff;
         }
         
         .add-to-cart {
@@ -518,28 +497,24 @@
                 grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
                 gap: 1rem;
             }
-            
-            .stats {
-                grid-template-columns: repeat(2, 1fr);
-            }
         }
     </style>
-
+@endsection
 <body>
  
+    
+    <!-- Navigation -->
     <nav class="navbar">
         <div class="nav-container">
-            
+            <div class="logo">Barcom</div>
             <div class="search-bar">
                 <input type="text" id="searchInput" placeholder="Cari produk elektronik...">
                 <span class="search-icon">🔍</span>
             </div>
-            <div class="cart-icon">
-                <span class="cart-badge">0</span>
-            </div>
         </div>
     </nav>
     
+    <!-- Main Content -->
     <div class="container">
         <div class="hero">
             <div class="hero-content">
@@ -548,25 +523,7 @@
             </div>
         </div>
         
-        <div class="stats">
-            <div class="stat-card">
-                <div class="stat-value" id="totalProducts">0</div>
-                <div class="stat-label">Total Produk</div>
-            </div>
-            <div class="stat-card">
-                <div class="stat-value">8</div>
-                <div class="stat-label">Kategori</div>
-            </div>
-            <div class="stat-card">
-                <div class="stat-value">4.8★</div>
-                <div class="stat-label">Rating Toko</div>
-            </div>
-            <div class="stat-card">
-                <div class="stat-value">24/7</div>
-                <div class="stat-label">Customer Support</div>
-            </div>
-        </div>
-        
+        <!-- Controls Section -->
         <div class="controls">
             <div class="filter-tags" id="filterTags"></div>
             <select class="sort-select" id="sortSelect">
@@ -578,6 +535,7 @@
             </select>
         </div>
         
+        <!-- Products Section -->
         <div class="products-header">
             <h2>Produk Tersedia</h2>
             <span class="products-count" id="productsCount">Menampilkan 0 produk</span>
@@ -596,6 +554,7 @@
             <p>Maaf, tidak ada produk yang sesuai dengan pencarian Anda.</p>
         </div>
     </div>
+    
     <script>
         const products = [
             { id: 1, title: "iPhone 14 Pro", category: "smartphone", price: 18999000, image: "https://images.unsplash.com/photo-1592750475338-74b7b21085ab?w=800&q=80", badge: "Terlaris" },
@@ -615,14 +574,14 @@
         ];
 
         const categories = [
-            { id: "all", name: "✨ Semua Produk", icon: "🏪" },
-            { id: "smartphone", name: "📱 Smartphone", icon: "📱" },
-            { id: "laptop", name: "💻 Laptop", icon: "💻" },
-            { id: "tv", name: "📺 Televisi", icon: "📺" },
-            { id: "audio", name: "🎧 Audio", icon: "🎧" },
-            { id: "camera", name: "📷 Kamera", icon: "📷" },
-            { id: "gaming", name: "🎮 Gaming", icon: "🎮" },
-            { id: "smart-home", name: "🏠 Smart Home", icon: "🏠" }
+            { id: "all", name: " Semua Produk", icon: "" },
+            { id: "smartphone", name: " Smartphone", icon: "" },
+            { id: "laptop", name: " Laptop", icon: "" },
+            { id: "tv", name: " Televisi", icon: "" },
+            { id: "audio", name: " Audio", icon: "" },
+            { id: "camera", name: " Kamera", icon: "" },
+            { id: "gaming", name: " Gaming", icon: "" },
+            { id: "smart-home", name: " Smart Home", icon: "" }
         ];
 
         let currentCategory = "all";
@@ -752,6 +711,7 @@
             }, 2000);
         }
 
+        // Event Listeners
         document.getElementById("searchInput").addEventListener("input", function(e) {
             searchQuery = e.target.value;
             displayProducts();
@@ -762,10 +722,11 @@
             displayProducts();
         });
 
+        // Initialize the page
         document.addEventListener("DOMContentLoaded", function() {
-            document.getElementById("totalProducts").textContent = products.length;
             initializeFilters();
             displayProducts();
         });
     </script>
 </body>
+</html>

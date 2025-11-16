@@ -15,13 +15,13 @@ use App\Http\Controllers\ProfileController;
 */
 
 Route::get('/', [\App\Http\Controllers\SiteController::class, 'index'])->name('index');
-Route::get('/detail produk', function () {
+Route::get('/detail-produk', function () {
     return view('customer.produk.show');
 });
 Route::get('/kategori-produk', function () {
     return view('customer.produk.index');
 });
-Route::get('/hubungi_kami', function () {
+Route::get('/hubungi-kami', function () {
     return view('customer.kontak.index');
 });
 Route::get('/tentang', function () {
