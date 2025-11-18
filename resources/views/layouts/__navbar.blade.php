@@ -4,10 +4,11 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Paham Pajak - Modern Navbar</title>
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <!-- <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"> -->
+    
     <style>
         :root {
-            --primary: #2563eb;
+            --primary: #f59e0b;
             --primary-light: #3b82f6;
             --primary-dark: #1d4ed8;
             --secondary: #64748b;
@@ -132,10 +133,15 @@
             list-style: none;
             align-items: center;
             gap: 4px;
+            /* MODIFIKASI: Menambahkan properti untuk menyelaraskan menu dengan logo */
+            height: 100%;
         }
 
         .nav-item {
             position: relative;
+            /* MODIFIKASI: Menambahkan properti untuk menyelaraskan menu dengan logo */
+            display: flex;
+            align-items: center;
         }
 
         .nav-link {
@@ -151,6 +157,14 @@
             position: relative;
             overflow: hidden;
             font-size: 0.95rem;
+            /* MODIFIKASI: Menambahkan properti untuk menyelaraskan menu dengan logo */
+            height: fit-content;
+        }
+
+        /* Efek hover orange untuk menu utama */
+        .nav-link:hover {
+            background-color: #f59e0b;
+            color: white;
         }
 
         .login-btn {
@@ -163,16 +177,19 @@
             transition: var(--transition);
             border-radius: var(--radius);
             white-space: nowrap;
-            background: linear-gradient(135deg, var(--primary), var(--primary-dark));
+            background: #f5b444f5;
             box-shadow: 0 2px 4px rgba(37, 99, 235, 0.2);
+            /* MODIFIKASI: Menambahkan properti untuk menyelaraskan menu dengan logo */
+            height: fit-content;
         }
 
         .login-btn:hover {
-            background: linear-gradient(135deg, var(--primary-dark), #1e40af);
+            background: #f59e0b;
             transform: translateY(-1px);
-            box-shadow: 0 4px 8px rgba(37, 99, 235, 0.3);
+            box-shadow: 0 4px 8px rgba(7, 8, 8, 0.3);
         }
-                .logout-item {
+
+        .logout-item {
             color: var(--danger) !important;
         }
 
@@ -183,11 +200,6 @@
 
         .logout-item i {
             background: var(--danger) !important;
-        }
-
-        .nav-link:hover {
-            background: #f1f5f9;
-            color: var(--primary);
         }
 
         .nav-link.active {
@@ -201,155 +213,6 @@
             font-size: 1.05rem;
             width: 18px;
             text-align: center;
-        }
-
-        /* Clean Dropdown Icons */
-        .nav-link .dropdown-chevron {
-            margin-left: 6px;
-            font-size: 0.7rem;
-            transition: transform 0.3s ease;
-            color: #94a3b8;
-        }
-
-        .nav-item:hover .nav-link .dropdown-chevron {
-            transform: rotate(180deg);
-            color: var(--primary);
-        }
-
-        /* Dropdown Styles */
-        .dropdown {
-            position: absolute;
-            top: calc(100% + 10px);
-            left: 0;
-            width: 100%;
-            min-width: 280px;
-            background: white;
-            box-shadow: var(--shadow-lg);
-            border-radius: var(--radius);
-            opacity: 0;
-            visibility: hidden;
-            transform: translateY(12px);
-            transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
-            z-index: 999;
-            padding: 12px 0;
-            border: 1px solid #f1f5f9;
-            pointer-events: none;
-        }
-
-        .nav-item:hover .dropdown {
-            opacity: 1;
-            visibility: visible;
-            transform: translateY(0);
-            pointer-events: auto;
-            transition-delay: 0.1s;
-        }
-
-        .dropdown:hover {
-            opacity: 1;
-            visibility: visible;
-            transform: translateY(0);
-            pointer-events: auto;
-        }
-
-        .nav-item::after {
-            content: '';
-            position: absolute;
-            top: 100%;
-            left: 0;
-            width: 100%;
-            height: 20px;
-            background: transparent;
-            z-index: 998;
-        }
-
-        .dropdown-grid {
-            display: grid;
-            gap: 4px;
-            padding: 4px 12px;
-        }
-
-        .two-columns {
-            grid-template-columns: 1fr 1fr;
-        }
-
-        .dropdown-column {
-            display: flex;
-            flex-direction: column;
-        }
-
-        .dropdown-item {
-            display: flex;
-            align-items: center;
-            padding: 12px 16px;
-            text-decoration: none;
-            color: var(--text);
-            border-radius: 8px;
-            transition: var(--transition);
-            font-size: 0.9rem;
-            position: relative;
-        }
-
-        .dropdown-item:hover {
-            background: #eff6ff;
-            color: var(--primary);
-            transform: translateX(4px);
-        }
-
-        .dropdown-item.active {
-            background: #eff6ff;
-            color: var(--primary);
-        }
-
-        /* Styling untuk Icon dengan Background Warna */
-        .dropdown-item i {
-            margin-right: 12px;
-            width: 32px;
-            height: 32px;
-            border-radius: 8px;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            color: white;
-            font-size: 0.9rem;
-            transition: var(--transition);
-        }
-
-        /* Warna Background untuk Setiap Icon */
-        .dropdown-item i.fa-book { background: var(--primary); }
-        .dropdown-item i.fa-calculator { background: var(--success); }
-        .dropdown-item i.fa-file-invoice-dollar { background: var(--accent); }
-        .dropdown-item i.fa-file-contract { background: var(--purple); }
-        .dropdown-item i.fa-receipt { background: var(--pink); }
-        .dropdown-item i.fa-file-alt { background: var(--danger); }
-        .dropdown-item i.fa-user-graduate { background: var(--primary); }
-        .dropdown-item i.fa-microphone { background: var(--success); }
-        .dropdown-item i.fa-users { background: var(--accent); }
-        .dropdown-item i.fa-building { background: var(--purple); }
-        .dropdown-item i.fa-clipboard-list { background: var(--pink); }
-        .dropdown-item i.fa-chart-line { background: var(--success); }
-        .dropdown-item i.fa-gavel { background: var(--danger); }
-        .dropdown-item i.fa-search-dollar { background: var(--accent); }
-        .dropdown-item i.fa-exchange-alt { background: var(--purple); }
-        .dropdown-item i.fa-comments { background: var(--pink); }
-        .dropdown-item i.fa-comment-dots { background: var(--primary); }
-        .dropdown-item i.fa-id-badge { background: var(--teal); }
-        .dropdown-item i.fa-cart-shopping { background: var(--accent); }
-        .dropdown-item i.fa-clock-rotate-left { background: var(--purple); }
-        .dropdown-item i.fa-right-from-bracket { background: var(--danger); }
-
-        .dropdown-item:hover i {
-            transform: scale(1.1);
-        }
-
-        /* Badge for New Items */
-        .dropdown-badge {
-            background: var(--success);
-            color: white;
-            font-size: 0.7rem;
-            padding: 2px 6px;
-            border-radius: 10px;
-            margin-left: auto;
-            font-weight: 600;
         }
 
         /* Mobile Menu Button */
@@ -448,10 +311,6 @@
                 margin-bottom: 0;
             }
 
-            .nav-item::after {
-                display: none;
-            }
-
             .nav-link {
                 width: 100%;
                 justify-content: flex-start;
@@ -462,10 +321,6 @@
                 gap: 0;
             }
 
-            .nav-link .dropdown-chevron {
-                margin-left: auto;
-            }
-
             .login-btn {
                 width: 100%;
                 color: var(--text-light) !important;
@@ -474,56 +329,6 @@
                 padding: 14px 20px;
                 border-radius: 10px;
                 font-size: 0.95rem;
-            }
-
-            .dropdown {
-                position: static;
-                width: 100%;
-                box-shadow: none;
-                border-radius: 10px;
-                border: 1px solid #e2e8f0;
-                background: #f8fafc;
-                opacity: 1;
-                visibility: visible;
-                transform: none;
-                max-height: 0;
-                overflow: hidden;
-                transition: max-height 0.4s cubic-bezier(0.4, 0, 0.2, 1), padding 0.3s ease;
-                padding: 0;
-                margin-top: 6px;
-                margin-bottom: 6px;
-                pointer-events: auto;
-            }
-
-            .dropdown.active {
-                max-height: 600px;
-                padding: 8px 0;
-            }
-
-            .dropdown-grid {
-                padding: 4px 8px;
-                gap: 2px;
-            }
-
-            .dropdown-grid.two-columns {
-                grid-template-columns: 1fr;
-            }
-
-            .dropdown-item {
-                padding: 12px 14px;
-                border-radius: 8px;
-                font-size: 0.9rem;
-            }
-
-            .dropdown-item i {
-                width: 30px;
-                height: 30px;
-                margin-right: 10px;
-                font-size: 0.85rem;
-            }
-
-            .dropdown-item:last-child {
-                border-bottom: none;
             }
 
             .nav-container {
@@ -587,57 +392,6 @@
                 font-size: 0.9rem;
                 margin-top: 12px;
             }
-
-            .dropdown-item {
-                padding: 10px 12px;
-                font-size: 0.85rem;
-            }
-
-            .dropdown-item i {
-                width: 28px;
-                height: 28px;
-                margin-right: 10px;
-                font-size: 0.8rem;
-            }
-
-            .dropdown-badge {
-                font-size: 0.65rem;
-                padding: 1px 5px;
-            }
-        }
-
-        @media (min-width: 1025px) {
-            .dropdown {
-                width: auto;
-                min-width: 300px;
-            }
-
-            .dropdown-grid.two-columns {
-                min-width: 520px;
-            }
-
-            .nav-item {
-                transition: all 0.2s ease;
-            }
-
-            .nav-item:nth-child(5) .dropdown {
-                left: auto;
-                right: 0;
-            }
-
-            .nav-item:nth-child(7) .dropdown {
-                left: 0;       
-                right: auto;    
-                min-width: 240px;
-            }
-            .nav-item:nth-child(8) .dropdown {
-                left: 0;
-                right: auto;
-            }
-
-            .dropdown {
-                top: calc(100% + 10px);
-            }
         }
 
         @media (max-width: 480px) {
@@ -683,18 +437,6 @@
                 padding: 11px 16px;
                 font-size: 0.875rem;
             }
-
-            .dropdown-item {
-                padding: 9px 10px;
-                font-size: 0.8rem;
-            }
-
-            .dropdown-item i {
-                width: 26px;
-                height: 26px;
-                margin-right: 8px;
-                font-size: 0.75rem;
-            }
         }
     </style>
 </head>
@@ -712,6 +454,34 @@
             </a>
 
             <ul class="nav-menu">
+                <!-- Menu Home -->
+                <li class="nav-item">
+                    <a href="/" class="nav-link">
+                        <i class=""></i> Home
+                    </a>
+                </li>
+
+                <!-- Menu Produk -->
+                <li class="nav-item">
+                    <a href="/kategori-produk" class="nav-link">
+                        <i class=""></i> Produk
+                    </a>
+                </li>
+
+                <!-- Menu Tentang Kami -->
+                <li class="nav-item">
+                    <a href="/tentang" class="nav-link">
+                        <i class=""></i> Tentang Kami
+                    </a>
+                </li>
+
+                <!-- Menu Hubungi Kami -->
+                <li class="nav-item">
+                    <a href="/hubungi-kami" class="nav-link">
+                        <i class=""></i> Hubungi Kami
+                    </a>
+                </li>
+
                 <!-- Profil / Login -->
                 <li class="nav-item">
                 @guest
@@ -720,32 +490,11 @@
                     </a>
                 @endguest
                 @auth
-                    <a class="nav-link">
-                        <i class="fas fa-user-circle"></i> Profile 
-                        <i class="fas fa-chevron-down dropdown-chevron"></i>
+                    <a href="{{ route('profile.index') }}" class="nav-link">
+                        <i class="fas fa-user-circle"></i> Profile
                     </a>
-                    <div class="dropdown">
-                        <div class="dropdown-grid">
-                            <a href="{{ route('profile.index') }}" class="dropdown-item">
-                                <i class="fas fa-id-badge"></i> Profil Saya
-                            </a>
-                            <a href="/cart" class="dropdown-item">
-                                <i class="fas fa-cart-shopping"></i> Cart
-                            </a>
-                            <a href="/transactions" class="dropdown-item">
-                                <i class="fas fa-clock-rotate-left"></i> Riwayat Transaksi
-                            </a>
-                            <form method="POST" action="{{ route('logout') }}" style="margin: 0;">
-                                @csrf
-                                <button type="submit" class="dropdown-item logout-item" 
-                                        style="width: 100%; text-align: left;">
-                                    <i class="fas fa-right-from-bracket"></i> Logout
-                                </button>
-                            </form>
-                        </div>
-                    </div>
                 @endauth
-            </li>
+                </li>
             </ul>
 
             <button class="mobile-menu-btn" aria-label="Toggle Menu">
@@ -763,8 +512,6 @@
         document.addEventListener('DOMContentLoaded', function() {
             const mobileBtn = document.querySelector('.mobile-menu-btn');
             const navMenu = document.querySelector('.nav-menu');
-            const navLinks = document.querySelectorAll('.nav-link');
-            const dropdownItems = document.querySelectorAll('.dropdown-item');
             const sidebarOverlay = document.querySelector('.sidebar-overlay');
 
             // Toggle mobile menu
@@ -773,12 +520,6 @@
                 this.classList.toggle('active');
                 navMenu.classList.toggle('active');
                 sidebarOverlay.classList.toggle('active');
-
-                if (!navMenu.classList.contains('active')) {
-                    document.querySelectorAll('.dropdown').forEach(dropdown => {
-                        dropdown.classList.remove('active');
-                    });
-                }
             });
 
             // Close menu when clicking on overlay
@@ -786,57 +527,6 @@
                 mobileBtn.classList.remove('active');
                 navMenu.classList.remove('active');
                 this.classList.remove('active');
-                document.querySelectorAll('.dropdown').forEach(dropdown => {
-                    dropdown.classList.remove('active');
-                });
-            });
-
-            // Toggle dropdown di mobile/tablet
-            navLinks.forEach(link => {
-                link.addEventListener('click', function(e) {
-                    if (window.innerWidth <= 1024) {
-                        const dropdown = this.nextElementSibling;
-                        if (dropdown && dropdown.classList.contains('dropdown')) {
-                            e.preventDefault();
-                            e.stopPropagation();
-
-                            document.querySelectorAll('.dropdown').forEach(d => {
-                                if (d !== dropdown) {
-                                    d.classList.remove('active');
-                                }
-                            });
-
-                            dropdown.classList.toggle('active');
-                        }
-                    }
-                });
-            });
-
-            // Close mobile menu when clicking on dropdown items
-            dropdownItems.forEach(item => {
-                item.addEventListener('click', function() {
-                    if (window.innerWidth <= 1024) {
-                        setTimeout(() => {
-                            mobileBtn.classList.remove('active');
-                            navMenu.classList.remove('active');
-                            sidebarOverlay.classList.remove('active');
-                            document.querySelectorAll('.dropdown').forEach(dropdown => {
-                                dropdown.classList.remove('active');
-                            });
-                        }, 300);
-                    }
-                });
-            });
-
-            // Close dropdowns when clicking outside
-            document.addEventListener('click', function(e) {
-                if (window.innerWidth <= 1024) {
-                    if (!navMenu.contains(e.target) && !mobileBtn.contains(e.target)) {
-                        document.querySelectorAll('.dropdown').forEach(dropdown => {
-                            dropdown.classList.remove('active');
-                        });
-                    }
-                }
             });
 
             // Handle resize
@@ -845,9 +535,6 @@
                     mobileBtn.classList.remove('active');
                     navMenu.classList.remove('active');
                     sidebarOverlay.classList.remove('active');
-                    document.querySelectorAll('.dropdown').forEach(dropdown => {
-                        dropdown.classList.remove('active');
-                    });
                 }
             });
         });

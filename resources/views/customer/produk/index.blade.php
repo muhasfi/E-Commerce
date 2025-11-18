@@ -3,7 +3,7 @@
 @section('title', 'Produk - Barcom')
 
 @section('style')
-<!DOCTYPE html>
+
 
     <style>
         * {
