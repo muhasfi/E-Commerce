@@ -1,6 +1,7 @@
+
 @extends('layouts.master')
 
-@section('title', 'Paham Pajak - Solusi Akuntansi & Perpajakan Terpercaya')
+@section('title', 'Barcom - Pilihan Terbaik Kebutuhan Bisnis Anda')
 
 @section('style')
 <style>
@@ -538,6 +539,540 @@
         margin-bottom: 2rem;
         line-height: 1.8;
     }
+  
+        /* Hero Section */
+        .hero-section {
+            background: var(--gradient);
+            color: white;
+            padding: 4rem 0;
+            margin-bottom: 3rem;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .hero-section::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: url('data:image/svg+xml,<svg width="100" height="100" xmlns="http://www.w3.org/2000/svg"><defs><pattern id="grid" width="40" height="40" patternUnits="userSpaceOnUse"><path d="M 40 0 L 0 0 0 40" fill="none" stroke="rgba(255,255,255,0.1)" stroke-width="1"/></pattern></defs><rect width="100" height="100" fill="url(%23grid)"/></svg>');
+            opacity: 0.3;
+        }
+
+        .hero-content {
+            position: relative;
+            z-index: 1;
+        }
+
+        .hero-title {
+            font-size: 2.5rem;
+            font-weight: 800;
+            margin-bottom: 1rem;
+            letter-spacing: -1px;
+        }
+
+        .hero-subtitle {
+            font-size: 1.2rem;
+            opacity: 0.95;
+            font-weight: 400;
+            margin-bottom: 2rem;
+        }
+
+        .btn-hero {
+            background: rgba(255, 255, 255, 0.2);
+            border: 2px solid rgba(255, 255, 255, 0.3);
+            color: white;
+            padding: 12px 30px;
+            border-radius: 10px;
+            font-weight: 600;
+            font-size: 1rem;
+            transition: all 0.3s ease;
+            backdrop-filter: blur(10px);
+        }
+
+        .btn-hero:hover {
+            background: rgba(255, 255, 255, 0.3);
+            border-color: rgba(255, 255, 255, 0.5);
+            transform: translateY(-2px);
+            color: white;
+        }
+
+        /* Section Title */
+        .section-header {
+            margin-bottom: 3rem;
+            text-align: center;
+        }
+
+        .section-title {
+            font-size: 2rem;
+            font-weight: 700;
+            color: var(--text-primary);
+            margin-bottom: 0.5rem;
+            letter-spacing: -0.5px;
+        }
+
+        .section-subtitle {
+            color: var(--text-secondary);
+            font-size: 1.1rem;
+            font-weight: 400;
+        }
+
+        /* Product Cards - Menggunakan model dari kode kedua */
+        .products-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+            gap: 1.5rem;
+            margin-bottom: 3rem;
+        }
+
+        .product-card {
+            background: white;
+            border-radius: 15px;
+            overflow: hidden;
+            box-shadow: var(--shadow-md);
+            transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+            cursor: pointer;
+            position: relative;
+            height: 100%;
+            display: flex;
+            flex-direction: column;
+        }
+        
+        .product-card:hover {
+            transform: translateY(-8px);
+            box-shadow: var(--shadow-xl);
+        }
+        
+        .product-badge {
+            position: absolute;
+            top: 1rem;
+            left: 1rem;
+            background: var(--secondary-color);
+            color: white;
+            padding: 0.25rem 0.75rem;
+            border-radius: 20px;
+            font-size: 0.75rem;
+            font-weight: 600;
+            z-index: 2;
+        }
+
+        .product-image {
+            height: 220px;
+            background: linear-gradient(135deg, #f5f7fa 0%, #e2e8f0 100%);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            overflow: hidden;
+            position: relative;
+        }
+        
+        .product-image img {
+            width: 100%;
+            height: 100%;
+            object-fit: contain;
+            transition: transform 0.5s ease;
+            padding: 1rem;
+        }
+        
+        .product-card:hover .product-image img {
+            transform: scale(1.1);
+        }
+        
+        .product-actions {
+            position: absolute;
+            bottom: 1rem;
+            right: 1rem;
+            display: flex;
+            gap: 0.5rem;
+            opacity: 0;
+            transform: translateY(10px);
+            transition: all 0.3s;
+        }
+        
+        .product-card:hover .product-actions {
+            opacity: 1;
+            transform: translateY(0);
+        }
+        
+        .action-btn {
+            background: white;
+            border: none;
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            cursor: pointer;
+            box-shadow: var(--shadow-md);
+            transition: all 0.3s;
+        }
+        
+        .action-btn:hover {
+            background: var(--primary-color);
+            color: white;
+            transform: scale(1.1);
+        }
+        
+        .product-info {
+            padding: 1.25rem;
+            flex: 1;
+            display: flex;
+            flex-direction: column;
+        }
+        
+        .product-category {
+            color: var(--primary-color);
+            font-size: 0.8rem;
+            text-transform: uppercase;
+            font-weight: 700;
+            letter-spacing: 0.5px;
+            margin-bottom: 0.5rem;
+        }
+        
+        .product-title {
+            font-size: 1.1rem;
+            font-weight: 700;
+            margin-bottom: 0.75rem;
+            color: var(--text-primary);
+            line-height: 1.4;
+            height: 3rem;
+            overflow: hidden;
+            display: -webkit-box;
+            -webkit-line-clamp: 2;
+            -webkit-box-orient: vertical;
+        }
+        
+        .product-features {
+            display: flex;
+            gap: 0.5rem;
+            margin-bottom: 1rem;
+            flex-wrap: wrap;
+        }
+        
+        .feature-tag {
+            background: #f1f5f9;
+            padding: 0.25rem 0.5rem;
+            border-radius: 5px;
+            font-size: 0.75rem;
+            color: #475569;
+        }
+        
+        .rating {
+            color: var(--accent-color);
+            margin-bottom: 1rem;
+            font-size: 0.9rem;
+        }
+
+        .rating i {
+            margin-right: 2px;
+        }
+
+        .rating-text {
+            color: var(--text-secondary);
+            font-size: 0.875rem;
+            font-weight: 500;
+        }
+        
+        .product-footer {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding-top: 1rem;
+            border-top: 1px solid var(--border-color);
+            margin-top: auto;
+        }
+        
+        .product-price {
+            font-size: 1.4rem;
+            font-weight: 800;
+            color:  #0f0f0eff;
+        }
+        
+        .discount {
+            text-decoration: line-through;
+            color: var(--text-secondary);
+            font-size: 0.875rem;
+            font-weight: 500;
+        }
+
+        .add-to-cart {
+            background:  #d97706;
+            color: white;
+            border: none;
+            padding: 0.75rem 1.5rem;
+            border-radius: 10px;
+            cursor: pointer;
+            font-weight: 600;
+            font-size: 0.9rem;
+            transition: all 0.3s;
+            box-shadow: 0 4px 12px rgba(37, 99, 235, 0.3);
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .add-to-cart:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 6px 20px rgba(37, 99, 235, 0.4);
+        }
+
+        .add-to-cart:active {
+            transform: translateY(0);
+        }
+
+        .add-to-cart i {
+            margin-right: 8px;
+        }
+
+      
+
+        /* Animations */
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(30px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        .product-card {
+            animation: fadeInUp 0.6s ease backwards;
+        }
+
+        .product-card:nth-child(1) { animation-delay: 0.1s; }
+        .product-card:nth-child(2) { animation-delay: 0.2s; }
+        .product-card:nth-child(3) { animation-delay: 0.3s; }
+        .product-card:nth-child(4) { animation-delay: 0.4s; }
+
+        /* Ripple effect */
+        .ripple {
+            position: absolute;
+            border-radius: 50%;
+            background: rgba(255, 255, 255, 0.6);
+            transform: scale(0);
+            animation: ripple 0.6s linear;
+        }
+
+        @keyframes ripple {
+            to {
+                transform: scale(4);
+                opacity: 0;
+            }
+        }
+
+        /* Responsive */
+        @media (max-width: 768px) {
+            .hero-title {
+                font-size: 2rem;
+            }
+
+            .hero-subtitle {
+                font-size: 1rem;
+            }
+
+            .section-title {
+                font-size: 1.5rem;
+            }
+
+            .product-image {
+                height: 200px;
+            }
+            
+            .products-grid {
+                grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+                gap: 1rem;
+            }
+        }
+
+
+    /* Google Rating */
+     /* Tombol navigasi */
+        .custom-control {
+            width: 45px;
+            height: 45px;
+            background: rgba(0,0,0,0.5);
+            border-radius: 50%;
+            top: 50%;
+            transform: translateY(-50%);
+            opacity: 0.8;
+            transition: 0.3s;
+        }
+        .custom-control:hover { opacity: 1; }
+
+        .carousel-control-prev.custom-control { left: -22px; }
+        .carousel-control-next.custom-control { right: -22px; }
+
+        /* Kunci tinggi card agar tidak berubah */
+        .review-card {
+            min-height: 180px;
+            transition: transform 0.3s ease;
+        }
+        .review-card:hover {
+            transform: translateY(-3px);
+        }
+
+        /* Pastikan tinggi carousel tidak berubah */
+        .carousel-inner {
+            min-height: 240px;
+        }
+
+        /* Responsif */
+        @media (max-width: 768px) {
+            .carousel-control-prev.custom-control { left: -10px; }
+            .carousel-control-next.custom-control { right: -10px; }
+        }
+/* Card Kategori */
+.category-card {
+            position: relative;
+            overflow: hidden;
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            height: 250px;
+            cursor: pointer;
+        }
+        
+        .category-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 20px rgba(0,0,0,0.15);
+        }
+        
+        .category-image {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform 0.5s ease;
+        }
+        
+        .category-card:hover .category-image {
+            transform: scale(1.05);
+        }
+        
+        .category-overlay {
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            background: linear-gradient(to top, rgba(0,0,0,0.8), transparent);
+            color: white;
+            padding: 20px;
+            transform: translateY(100%);
+            transition: transform 0.3s ease;
+        }
+        
+        .category-card:hover .category-overlay {
+            transform: translateY(0);
+        }
+        
+        .category-title {
+            font-size: 1.25rem;
+            font-weight: 600;
+            margin-bottom: 5px;
+        }
+        
+        .category-stock {
+            font-size: 0.9rem;
+            opacity: 0.9;
+        }
+        
+        .page-header {
+            margin-bottom: 2rem;
+        }
+        
+  /* Hot Produk */
+    :root {
+            --primary-color: #2563eb;
+            --primary-dark: #1e40af;
+            --secondary-color: #10b981;
+            --accent-color: #f59e0b;
+            --accent-hover: #d97706;
+            --light-bg: #f8fafc;
+            --card-bg: #ffffff;
+            --text-primary: #0f172a;
+            --text-secondary: #64748b;
+            --border-color: #e2e8f0;
+            --success-color: #10b981;
+            --shadow-sm: 0 1px 2px 0 rgba(0, 0, 0, 0.05);
+            --shadow-md: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
+            --shadow-lg: 0 10px 15px -3px rgba(0, 0, 0, 0.1);
+            --shadow-xl: 0 20px 25px -5px rgba(0, 0, 0, 0.1);
+            --gradient: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+        }
+        
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+        }
+        
+        body {
+            background-color: var(--light-bg);
+            color: var(--text-primary);
+            line-height: 1.6;
+        }
+
+       
+
+        /* Kelebihan */
+         body {
+            background-color: #f8f9fa;
+            padding: 20px 0;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+        .section-title {
+            text-align: center;
+            margin-bottom: 50px;
+            color: #333;
+            font-weight: 700;
+            position: relative;
+            padding-bottom: 15px;
+        }
+        .section-title:after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 80px;
+            height: 3px;
+            background: linear-gradient(90deg, #FFD700, #FFA500);
+        }
+        .feature-card {
+            transition: transform 0.3s, box-shadow 0.3s;
+            height: 100%;
+            border: none;
+            border-radius: 10px;
+            overflow: hidden;
+            background: white;
+        }
+        .feature-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 20px rgba(0,0,0,0.1);
+        }
+        .feature-icon {
+            font-size: 2.5rem;
+            margin-bottom: 15px;
+            color: #d97706; /* Warna kuning */
+            text-shadow: 0 2px 4px rgba(0,0,0,0.1);
+        }
+        .card-title {
+            font-weight: 600;
+            margin-bottom: 15px;
+            color: #333;
+        }
+        .card-text {
+            color: #666;
+            line-height: 1.6;
+        }
+        .card-body {
+            padding: 2rem 1.5rem;
+        }
 
     /* Animations */
     @keyframes fadeInUp {
@@ -702,15 +1237,519 @@
 <main>
     
     <!-- Hero/ Caraousel -->
-        @include('layouts.carousel')
+<section id="hero">
+    <div id="heroCarousel" class="carousel slide carousel-fade" data-bs-ride="carousel">
+        <div class="carousel-inner">
+            <!-- Slide 1 -->
+             <!-- <img src="{{ asset('assets/customer/images/barcom no bg.png') }}" alt="Logo Paham Pajak" style="width: 200px; height: 200px; object-fit: contain;"> -->
+            <div class="carousel-item active" style="background-image: url('{{ asset('assets/customer/images/laptop.jpg') }}');background-size: cover; background-position: center; height: 100vh;">
+                <div class="carousel-container d-flex justify-content-center align-items-center text-center text-white" style="background: rgba(0, 0, 0, 0.5); height: 100%;">
+                    <div>
+                        <h1 class="display-4 fw-bold">Solusi Laptop Terbaik Anda</h1>
+                          <p class="lead">Lorem, ipsum dolor sit amet consectetur adipisicing elit.</p>
+                        <p>  Aliquid animi tempora voluptate qui. 
+                            Voluptates impedit iusto sunt quidem sint tenetur odio quia deleniti debitis nulla,</p>
+                        <p> vitae architecto ratione unde exercitationem.</p>
+                        <!-- <p class="lead">Dapatkan performa cepat, desain modern, dan layanan purna jual terpercaya.</p> -->
+                       
+                    </div>
+                </div>
+            </div>
+
+            <!-- Slide 2 -->
+           <div class="carousel-item active" style="background-image: url('{{ asset('assets/customer/images/cctv.jpg') }}');background-size: cover; background-position: center; height: 100vh;">
+                <div class="carousel-container d-flex justify-content-center align-items-center text-center text-white" style="background: rgba(0, 0, 0, 0.5); height: 100%;">
+                    <div>
+                        <h1 class="display-4 fw-bold">Keamanan Maksimal </h1>
+                         <p class="lead">Lorem, ipsum dolor sit amet consectetur adipisicing elit.</p>
+                        <p>  Aliquid animi tempora voluptate qui. 
+                            Voluptates impedit iusto sunt quidem sint tenetur odio quia deleniti debitis nulla,</p>
+                        <p> vitae architecto ratione unde exercitationem.</p>
+                       
+                      
+                    </div>
+                </div>
+            </div>
+
+            <!-- Slide 3 -->
+            <div class="carousel-item active" style="background-image: url('{{ asset('assets/customer/images/wifi.jpg') }}');background-size: cover; background-position: center; height: 100vh;">
+                <div class="carousel-container d-flex justify-content-center align-items-center text-center text-white" style="background: rgba(0, 0, 0, 0.5); height: 100%;">
+                    <div>
+                        <h1 class="display-4 fw-bold">Internet Cepat dan Stabil</h1>
+                        <p class="lead">Lorem, ipsum dolor sit amet consectetur adipisicing elit.</p>
+                        <p>  Aliquid animi tempora voluptate qui. 
+                            Voluptates impedit iusto sunt quidem sint tenetur odio quia deleniti debitis nulla,</p>
+                        <p> vitae architecto ratione unde exercitationem.</p>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+
+        <!-- Controls -->
+        <button class="carousel-control-prev" type="button" data-bs-target="#heroCarousel" data-bs-slide="prev">
+            <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+        </button>
+        <button class="carousel-control-next" type="button" data-bs-target="#heroCarousel" data-bs-slide="next">
+            <span class="carousel-control-next-icon" aria-hidden="true"></span>
+        </button>
+
+        <!-- Indicators -->
+        <div class="carousel-indicators">
+            <button type="button" data-bs-target="#heroCarousel" data-bs-slide-to="0" class="active"></button>
+            <button type="button" data-bs-target="#heroCarousel" data-bs-slide-to="1"></button>
+            <button type="button" data-bs-target="#heroCarousel" data-bs-slide-to="2"></button>
+        </div>
+    </div>
+</section>
+
         <!-- rating google -->
-        @include('layouts.google-rating')
+      <section class="py-5 bg-light">
+    <div class="container position-relative">
+        <div class="row align-items-center">
+            <!-- Bagian kiri -->
+            <div class="col-lg-3 text-center text-lg-start mb-4 mb-lg-0">
+                <h5 class="fw-bold text-uppercase mb-2">Bagus Sekali</h5>
+                <div class="d-flex justify-content-center justify-content-lg-start align-items-center mb-2">
+                    <span class="text-warning fs-4 me-1">★</span>
+                    <span class="text-warning fs-4 me-1">★</span>
+                    <span class="text-warning fs-4 me-1">★</span>
+                    <span class="text-warning fs-4 me-1">★</span>
+                    <span class="text-warning fs-4 me-1">★</span>
+                    <i class="bi bi-star-half text-warning fs-5"></i>
+                </div>
+                <p class="mb-2">Berdasarkan <strong>18.247</strong> ulasan</p>
+                <img src="{{ asset('assets/customer/images/google.png') }}" alt="Google" width="20">
+            </div>
+
+            <!-- Bagian kanan -->
+            <div class="col-lg-9 position-relative">
+                <div id="googleReviewCarousel" class="carousel slide" data-bs-ride="carousel" data-bs-interval="4000">
+
+                    <!-- DOT indikator -->
+                    <div class="carousel-indicators mb-0">
+                        <button type="button" data-bs-target="#googleReviewCarousel" data-bs-slide-to="0" class="active bg-primary rounded-circle" style="width:10px;height:10px"></button>
+                        <button type="button" data-bs-target="#googleReviewCarousel" data-bs-slide-to="1" class="bg-primary rounded-circle" style="width:10px;height:10px"></button>
+                        <button type="button" data-bs-target="#googleReviewCarousel" data-bs-slide-to="2" class="bg-primary rounded-circle" style="width:10px;height:10px"></button>
+                    </div>
+
+                    <div class="carousel-inner mt-3">
+                        <!-- Slide 1 -->
+                        <div class="carousel-item active">
+                            <div class="row g-3">
+                                <div class="col-md-4">
+                                    <div class="card border-0 shadow-sm review-card h-100">
+                                        <div class="card-body">
+                                            <div class="d-flex align-items-center mb-2">
+                                                <img src="https://via.placeholder.com/40" class="rounded-circle me-2" alt="">
+                                                <h6 class="mb-0 fw-bold">Teguh Ariyanto</h6>
+                                                <img src="https://upload.wikimedia.org/wikipedia/commons/5/53/Google_%22G%22_Logo.svg" class="ms-auto" width="18" alt="">
+                                            </div>
+                                            <div class="text-warning mb-2">
+                                                ★★★★★ <i class="bi bi-patch-check-fill text-primary ms-1"></i>
+                                            </div>
+                                            <p class="text-muted small mb-0">Mba Fitri salesnya baik dan cekata...</p>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <div class="col-md-4">
+                                    <div class="card border-0 shadow-sm review-card h-100">
+                                        <div class="card-body">
+                                            <div class="d-flex align-items-center mb-2">
+                                                <div class="rounded-circle bg-primary text-white d-flex align-items-center justify-content-center me-2" style="width:40px;height:40px;">b</div>
+                                                <h6 class="mb-0 fw-bold">Batrisyia</h6>
+                                                <img src="https://upload.wikimedia.org/wikipedia/commons/5/53/Google_%22G%22_Logo.svg" class="ms-auto" width="18" alt="">
+                                            </div>
+                                            <div class="text-warning mb-2">
+                                                ★★★★★ <i class="bi bi-patch-check-fill text-primary ms-1"></i>
+                                            </div>
+                                            <p class="text-muted small mb-0">Pelayanannya baik dibantu ka kemal daan ka yani</p>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <div class="col-md-4">
+                                    <div class="card border-0 shadow-sm review-card h-100">
+                                        <div class="card-body">
+                                            <div class="d-flex align-items-center mb-2">
+                                                <img src="https://via.placeholder.com/40" class="rounded-circle me-2" alt="">
+                                                <h6 class="mb-0 fw-bold">Margaretha Christa...</h6>
+                                                <img src="https://upload.wikimedia.org/wikipedia/commons/5/53/Google_%22G%22_Logo.svg" class="ms-auto" width="18" alt="">
+                                            </div>
+                                            <div class="text-warning mb-2">
+                                                ★★★★★ <i class="bi bi-patch-check-fill text-primary ms-1"></i>
+                                            </div>
+                                            <p class="text-muted small mb-0">Wiwin keren</p>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Slide 2 -->
+                        <div class="carousel-item">
+                            <div class="row g-3">
+                                <div class="col-md-4">
+                                    <div class="card border-0 shadow-sm review-card h-100">
+                                        <div class="card-body">
+                                            <div class="d-flex align-items-center mb-2">
+                                                <div class="rounded-circle bg-danger text-white d-flex align-items-center justify-content-center me-2" style="width:40px;height:40px;">r</div>
+                                                <h6 class="mb-0 fw-bold">Rizky</h6>
+                                                <img src="https://upload.wikimedia.org/wikipedia/commons/5/53/Google_%22G%22_Logo.svg" class="ms-auto" width="18" alt="">
+                                            </div>
+                                            <div class="text-warning mb-2">★★★★★</div>
+                                            <p class="text-muted small mb-0">Proses cepat, pelayanan ramah!</p>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <div class="col-md-4">
+                                    <div class="card border-0 shadow-sm review-card h-100">
+                                        <div class="card-body">
+                                            <div class="d-flex align-items-center mb-2">
+                                                <img src="https://via.placeholder.com/40" class="rounded-circle me-2" alt="">
+                                                <h6 class="mb-0 fw-bold">Dea Marlina</h6>
+                                                <img src="https://upload.wikimedia.org/wikipedia/commons/5/53/Google_%22G%22_Logo.svg" class="ms-auto" width="18" alt="">
+                                            </div>
+                                            <div class="text-warning mb-2">★★★★★</div>
+                                            <p class="text-muted small mb-0">Terima kasih sudah dibantu dengan baik!</p>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <div class="col-md-4">
+                                    <div class="card border-0 shadow-sm review-card h-100">
+                                        <div class="card-body">
+                                            <div class="d-flex align-items-center mb-2">
+                                                <div class="rounded-circle bg-success text-white d-flex align-items-center justify-content-center me-2" style="width:40px;height:40px;">a</div>
+                                                <h6 class="mb-0 fw-bold">Andi Pratama</h6>
+                                                <img src="https://upload.wikimedia.org/wikipedia/commons/5/53/Google_%22G%22_Logo.svg" class="ms-auto" width="18" alt="">
+                                            </div>
+                                            <div class="text-warning mb-2">★★★★★</div>
+                                            <p class="text-muted small mb-0">Sangat puas dengan hasilnya!</p>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Tombol navigasi -->
+                    <button class="carousel-control-prev custom-control" type="button" data-bs-target="#googleReviewCarousel" data-bs-slide="prev">
+                        <span class="carousel-control-prev-icon"></span>
+                        <span class="visually-hidden">Previous</span>
+                    </button>
+                    <button class="carousel-control-next custom-control" type="button" data-bs-target="#googleReviewCarousel" data-bs-slide="next">
+                        <span class="carousel-control-next-icon"></span>
+                        <span class="visually-hidden">Next</span>
+                    </button>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
         <!-- Kategori -->
-        @include('layouts.categories')
+        <div class="container py-5">
+        <!-- Header -->
+        <div class="page-header text-center">
+            <h1 class="display-8 fw-bold text-dark">Kategori Barang Elektronik</h1>
+            <!-- <p class="lead">Temukan berbagai macam produk elektronik berkualitas</p> -->
+        </div>
+        
+        <!-- Kategori Cards -->
+        <div class="row g-4">
+            <!-- Kategori 1 -->
+            <div class="col-md-6 col-lg-4">
+                <div class="category-card">
+                    <img src="https://images.unsplash.com/photo-1498049794561-7780e7231661?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1170&q=80" 
+                         alt="Laptop" class="category-image">
+                    <div class="category-overlay">
+                        <h3 class="category-title">Laptop & Notebook</h3>
+                        <p class="category-stock">Stok tersedia: 42 unit</p>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Kategori 2 -->
+            <div class="col-md-6 col-lg-4">
+                <div class="category-card">
+                    <img src="https://images.unsplash.com/photo-1555774698-0b77e0d5fac6?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1170&q=80" 
+                         alt="Smartphone" class="category-image">
+                    <div class="category-overlay">
+                        <h3 class="category-title">Smartphone & Tablet</h3>
+                        <p class="category-stock">Stok tersedia: 78 unit</p>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Kategori 3 -->
+            <div class="col-md-6 col-lg-4">
+                <div class="category-card">
+                    <img src="https://images.unsplash.com/photo-1542751110-97427bbecf20?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1084&q=80" 
+                         alt="Audio" class="category-image">
+                    <div class="category-overlay">
+                        <h3 class="category-title">Audio & Headphone</h3>
+                        <p class="category-stock">Stok tersedia: 35 unit</p>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Kategori 4 -->
+            <div class="col-md-6 col-lg-4">
+                <div class="category-card">
+                    <img src="https://images.unsplash.com/photo-1593640408182-31c70c8268f5?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1142&q=80" 
+                         alt="Kamera" class="category-image">
+                    <div class="category-overlay">
+                        <h3 class="category-title">Kamera & Aksesoris</h3>
+                        <p class="category-stock">Stok tersedia: 24 unit</p>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Kategori 5 -->
+            <div class="col-md-6 col-lg-4">
+                <div class="category-card">
+                    <img src="https://images.unsplash.com/photo-1558618666-fcd25c85cd64?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1151&q=80" 
+                         alt="Gaming" class="category-image">
+                    <div class="category-overlay">
+                        <h3 class="category-title">Gaming & Konsol</h3>
+                        <p class="category-stock">Stok tersedia: 19 unit</p>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Kategori 6 -->
+            <div class="col-md-6 col-lg-4">
+                <div class="category-card">
+                    <img src="https://images.unsplash.com/photo-1558618047-3c8c76ca7d13?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1121&q=80" 
+                         alt="Smart Home" class="category-image">
+                    <div class="category-overlay">
+                        <h3 class="category-title">Smart Home & IoT</h3>
+                        <p class="category-stock">Stok tersedia: 31 unit</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
         <!-- hot produk -->
-        @include('layouts.hot_produk')
+         <!-- Main Content -->
+    <div class="container">
+        <!-- Best Seller Products -->
+        <section class="mb-5">
+            <div class="section-header">
+                <h2 class="section-title">Produk Best Seller</h2>
+            </div>
+            
+            <div class="products-grid">
+                <!-- Product 1 -->
+                <div class="product-card">
+                    <div class="product-badge">Best Seller</div>
+                    <div class="product-image">
+                        <img src="https://images.unsplash.com/photo-1511707171634-5f897ff02aa9?w=400" alt="Smartphone X1">
+                        <div class="product-actions">
+                            <button class="action-btn" title="Tambah ke Wishlist"><i class="far fa-heart"></i></button>
+                            <button class="action-btn" title="Lihat Detail"><i class="far fa-eye"></i></button>
+                        </div>
+                    </div>
+                    <div class="product-info">
+                        <div class="product-category">Smartphone</div>
+                        <h3 class="product-title">Smartphone X1 Pro</h3>
+                        <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Quas a, est a
+                            speriores ratione molestiae minima impedit laboriosam dolores, totam repellat voluptatem 
+                            vero deserunt inventore beatae vitae culpa error esse illum.</p>
+                        <div class="product-features">
+                            <span class="feature-tag">Layar 6.7"</span>
+                            <span class="feature-tag">RAM 8GB</span>
+                            <span class="feature-tag">Kamera 108MP</span>
+                        </div>
+                        
+                        <div class="product-footer">
+                            <div>
+                                <div class="product-price">Rp 5.999.000</div>
+                                <div class="discount">Rp 6.499.000</div>
+                            </div>
+                            <button class="add-to-cart">
+                                <i class="fas fa-shopping-cart"></i>Keranjang
+                            </button>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Product 2 -->
+                <div class="product-card">
+                    <div class="product-badge">Best Seller</div>
+                    <div class="product-image">
+                        <img src="https://images.unsplash.com/photo-1496181133206-80ce9b88a853?w=400" alt="Laptop Ultra">
+                        <div class="product-actions">
+                            <button class="action-btn" title="Tambah ke Wishlist"><i class="far fa-heart"></i></button>
+                            <button class="action-btn" title="Lihat Detail"><i class="far fa-eye"></i></button>
+                        </div>
+                    </div>
+                    <div class="product-info">
+                        <div class="product-category">Laptop</div>
+                        <h3 class="product-title">Laptop Ultra Pro 15</h3>
+                           <p class>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Quas a, est a
+                            speriores ratione molestiae minima impedit laboriosam dolores, totam repellat voluptatem 
+                            vero deserunt inventore beatae vitae culpa error esse illum.</p>
+                        <div class="product-features">
+                            <span class="feature-tag">Intel i7</span>
+                            <span class="feature-tag">16GB RAM</span>
+                            <span class="feature-tag">SSD 512GB</span>
+                        </div>
+                        
+                        <div class="product-footer">
+                            <div>
+                                <div class="product-price">Rp 14.999.000</div>
+                                <div class="discount">Rp 16.999.000</div>
+                            </div>
+                            <button class="add-to-cart">
+                                <i class="fas fa-shopping-cart"></i>Keranjang
+                            </button>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Product 3 -->
+                <div class="product-card">
+                    <div class="product-badge">Best Seller</div>
+                    <div class="product-image">
+                        <img src="https://images.unsplash.com/photo-1590658268037-6bf12165a8df?w=400" alt="Wireless Earbuds">
+                        <div class="product-actions">
+                            <button class="action-btn" title="Tambah ke Wishlist"><i class="far fa-heart"></i></button>
+                            <button class="action-btn" title="Lihat Detail"><i class="far fa-eye"></i></button>
+                        </div>
+                    </div>
+                    <div class="product-info">
+                        <div class="product-category">Audio</div>
+                        <h3 class="product-title">Wireless Earbuds Pro</h3>
+                             <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Quas a, est a
+                            speriores ratione molestiae minima impedit laboriosam dolores, totam repellat voluptatem 
+                            vero deserunt inventore beatae vitae culpa error esse illum.</p>
+                        <div class="product-features">
+                            <span class="feature-tag">Noise Cancelling</span>
+                            <span class="feature-tag">Baterai 30 jam</span>
+                            <span class="feature-tag">Bluetooth 5.2</span>
+                        </div>
+                     
+                        <div class="product-footer">
+                            <div>
+                                <div class="product-price">Rp 1.499.000</div>
+                                <div class="discount">Rp 1.799.000</div>
+                            </div>
+                            <button class="add-to-cart">
+                                <i class="fas fa-shopping-cart"></i>Keranjang
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            
+            </div>
+        </section>
+    </div>
         <!-- kelebihan -->
-        @include('layouts.kelebihan')
+       <div class="container">
+        <h2 class="section-title mt-2">Kenapa harus membeli di Barcom? </h2>
+        <div class="row g-4">
+            <!-- Card 1 -->
+            <div class="col-md-6 col-lg-4">
+                <div class="card feature-card shadow-sm">
+                    <div class="card-body text-center p-4">
+                        <div class="feature-icon">
+                            <i class="fas fa-shipping-fast"></i>
+                        </div>
+                        <h5 class="card-title">Pengiriman Cepat</h5>
+                        <p class="card-text">
+                            Kami menyediakan layanan pengiriman cepat ke seluruh Indonesia. 
+                            Pesanan Anda akan sampai dalam waktu 1-3 hari kerja.
+                        </p>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Card 2 -->
+            <div class="col-md-6 col-lg-4">
+                <div class="card feature-card shadow-sm">
+                    <div class="card-body text-center p-4">
+                        <div class="feature-icon">
+                            <i class="fas fa-shield-alt"></i>
+                        </div>
+                        <h5 class="card-title">Garansi 100%</h5>
+                        <p class="card-text">
+                            Semua produk kami dilengkapi dengan garansi 100% kepuasan. 
+                            Jika tidak puas, Anda dapat mengembalikan produk dengan mudah.
+                        </p>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Card 3 -->
+            <div class="col-md-6 col-lg-4">
+                <div class="card feature-card shadow-sm">
+                    <div class="card-body text-center p-4">
+                        <div class="feature-icon">
+                            <i class="fas fa-headset"></i>
+                        </div>
+                        <h5 class="card-title">Layanan 24/7</h5>
+                        <p class="card-text">
+                            Tim customer service kami siap membantu Anda 24 jam sehari, 
+                            7 hari seminggu melalui chat, telepon, atau email.
+                        </p>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Card 4 -->
+            <div class="col-md-6 col-lg-4">
+                <div class="card feature-card shadow-sm">
+                    <div class="card-body text-center p-4">
+                        <div class="feature-icon">
+                            <i class="fas fa-tags"></i>
+                        </div>
+                        <h5 class="card-title">Harga Terjangkau</h5>
+                        <p class="card-text">
+                            Kami menawarkan produk berkualitas dengan harga yang kompetitif 
+                            dan terjangkau untuk semua kalangan.
+                        </p>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Card 5 -->
+            <div class="col-md-6 col-lg-4">
+                <div class="card feature-card shadow-sm">
+                    <div class="card-body text-center p-4">
+                        <div class="feature-icon">
+                            <i class="fas fa-award"></i>
+                        </div>
+                        <h5 class="card-title">Kualitas Terjamin</h5>
+                        <p class="card-text">
+                            Semua produk kami melalui proses quality control yang ketat 
+                            untuk memastikan kualitas terbaik untuk pelanggan.
+                        </p>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Card 6 -->
+            <div class="col-md-6 col-lg-4">
+                <div class="card feature-card shadow-sm">
+                    <div class="card-body text-center p-4">
+                        <div class="feature-icon">
+                            <i class="fas fa-lock"></i>
+                        </div>
+                        <h5 class="card-title">Pembayaran Aman</h5>
+                        <p class="card-text">
+                            Sistem pembayaran kami terjamin keamanannya dengan enkripsi 
+                            terbaru untuk melindungi data pribadi Anda.
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
 </main>
 @endsection
 
@@ -789,4 +1828,4 @@
         });
     });
 </script>
-@endsection
+@endsection\
