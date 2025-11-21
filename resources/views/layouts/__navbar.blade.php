@@ -13,7 +13,7 @@
         <div class="nav-container">
             <a href="/" class="logo">
         <div class="logo-image">
-        <img src="{{ asset('assets/customer/images/barcom no bg.png') }}" 
+        <img src="{{ asset('assets/customer/images/barcom.png') }}" 
              alt="Paham Pajak Logo" 
              class="logo-img">
         </div>

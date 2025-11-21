@@ -3,7 +3,7 @@
             <div class="footer-content">
                 <div class="footer-section">
                     <h3>Paham Pajak</h3>
-                    <p>Solusi perpajakan terpercaya untuk semua kebutuhan Anda. Konsultasi profesional dengan tim ahli berpengalaman.</p>
+                    <p>Solusi kebutuhan elektronik terpercaya untuk semua kebutuhan Anda. Konsultasi profesional dengan tim ahli berpengalaman.</p>
                     <div class="social-links">
                         <a href="#" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>
                         <a href="#" aria-label="Twitter"><i class="fab fa-twitter"></i></a>
@@ -14,23 +14,25 @@
                 
                 <div class="footer-section">
                     <h3>Layanan</h3>
-                    <a href="#produk">Buku & Artikel</a>
-                    <a href="#kelas">Kelas Bimbingan</a>
-                    <a href="#pelatihan">Pelatihan & Workshop</a>
-                    <a href="#konsultasi">Konsultasi Pajak</a>
+                    <a href="#produk">Laptop</a>
+                    <a href="#kelas">CCTV</a>
+                    <a href="#pelatihan">Mouse</a>
+                    <a href="#konsultasi">Print</a>
+                    <a href="#konsultasi">Lihat Lebih lanjut</a>
                 </div>
                 
                 <div class="footer-section">
                     <h3>Kontak</h3>
-                    <p><i class="fas fa-map-marker-alt"></i> Jl. Pajak Raya No. 123, Jakarta</p>
-                    <p><i class="fas fa-phone"></i> +62 21 1234 5678</p>
-                    <p><i class="fas fa-envelope"></i> info@pahampajak.com</p>
-                    <p><i class="fas fa-clock"></i> Senin - Jumat: 08:00 - 17:00</p>
+                    <p><i class="fas fa-map-marker-alt"></i> Jl. Sumpah Pemuda No.16
+Kec. Banjarsari, Kota Surakarta</p>
+                    <p><i class="fas fa-phone"></i> 0857-1366-6616</p>
+                    <p><i class="fas fa-envelope"></i> info@barcom.com</p>
+                    <p><i class="fas fa-clock"></i> Senin - Jumat: 08:00 - 18:00</p>
                 </div>
-                
+      
                 <div class="footer-section">
                     <h3>Newsletter</h3>
-                    <p>Dapatkan informasi terbaru tentang perpajakan langsung di email Anda.</p>
+                    <p>Dapatkan informasi terbaru tentang kami langsung di email Anda.</p>
                     <form class="newsletter-form">
                         <input type="email" placeholder="Masukkan email Anda" required>
                         <button type="submit"><i class="fas fa-paper-plane"></i></button>

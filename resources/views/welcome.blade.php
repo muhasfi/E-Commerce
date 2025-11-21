@@ -231,189 +231,7 @@
         color: white;
         transform: translateY(-2px);
     }
-    /* kaategori */
-
-    /* About Section */
-    .about {
-        background: white;
-        padding-top: 0;
-        margin-top: 0;
-    }
-
-    .about-content {
-        display: grid;
-        grid-template-columns: 1fr 1fr;
-        gap: 3rem;
-        align-items: center;
-    }
-
-    .about-image {
-        position: relative;
-    }
-
-    .about-image img {
-        width: 100%;
-        height: auto;
-        border-radius: 12px;
-        box-shadow: var(--shadow-xl);
-        display: block;
-    }
-
-    .about-image::before {
-        content: '';
-        position: absolute;
-        top: -15px;
-        left: -15px;
-        width: 100%;
-        height: 100%;
-        border: 4px solid var(--primary);
-        border-radius: 12px;
-        z-index: -1;
-        opacity: 0.3;
-    }
-
-    .about-text h2 {
-        font-size: 2rem;
-        margin-bottom: 1.2rem;
-        color: var(--dark);
-        font-weight: 700;
-    }
-
-    .about-text p {
-        color: var(--secondary);
-        margin-bottom: 1.2rem;
-        line-height: 1.8;
-        font-size: 1.05rem;
-    }
-
-    .about-features {
-        margin: 2rem 0;
-    }
-
-    .about-feature {
-        display: flex;
-        align-items: center;
-        margin-bottom: 1rem;
-        transition: transform 0.3s ease;
-    }
-
-    .about-feature:hover {
-        transform: translateX(5px);
-    }
-
-    .about-feature i {
-        width: 32px;
-        height: 32px;
-        border-radius: 50%;
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        margin-right: 1rem;
-        font-size: 0.9rem;
-        background: rgba(37, 99, 235, 0.1);
-        color: var(--primary);
-        flex-shrink: 0;
-    }
-
-    .about-feature span {
-        font-weight: 600;
-        color: var(--dark);
-    }
-
-    /* Services Section */
-    .services {
-        background: var(--light);
-    }
-
-    .services-grid {
-        display: grid;
-        grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
-        gap: 2rem;
-    }
-
-    .service-card {
-        background: white;
-        padding: 2rem 1.5rem;
-        border-radius: 12px;
-        box-shadow: var(--shadow);
-        transition: var(--transition);
-        text-align: center;
-        position: relative;
-        overflow: hidden;
-        border-top: 4px solid transparent;
-    }
-
-    .service-card:hover {
-        transform: translateY(-8px);
-        box-shadow: var(--shadow-xl);
-    }
-
-    .service-card:nth-child(1) {
-        border-top-color: #007bff;
-    }
-
-    .service-card:nth-child(2) {
-        border-top-color: #28a745;
-    }
-
-    .service-card:nth-child(3) {
-        border-top-color: #ffc107;
-    }
-
-    .service-card:nth-child(4) {
-        border-top-color: #dc3545;
-    }
-
-    .service-card:nth-child(5) {
-        border-top-color: #6f42c1;
-    }
-
-    .service-card:nth-child(6) {
-        border-top-color: #20c997;
-    }
-
-    .service-icon {
-        width: 70px;
-        height: 70px;
-        border-radius: 50%;
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        margin: 0 auto 1.2rem;
-        font-size: 1.8rem;
-        transition: var(--transition);
-    }
-
-    .service-card:hover .service-icon {
-        transform: scale(1.1) rotate(5deg);
-    }
-
-    .service-card h3 {
-        font-size: 1.3rem;
-        margin-bottom: 0.8rem;
-        color: var(--dark);
-        font-weight: 700;
-    }
-
-    .service-card p {
-        color: var(--secondary);
-        margin-bottom: 1.2rem;
-        line-height: 1.7;
-    }
-
-    .service-link {
-        color: var(--primary);
-        text-decoration: none;
-        font-weight: 600;
-        display: inline-flex;
-        align-items: center;
-        gap: 0.5rem;
-        transition: gap 0.3s ease;
-    }
-
-    .service-link:hover {
-        gap: 0.75rem;
-    }
+    
 /* Kategori */
  .circle {
     width: 100px;
@@ -984,6 +802,75 @@
             margin-bottom: 2rem;
         }
         
+        /* New Arrival, Special For You, On Sale Sections */
+    .section-header-flex {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        margin-bottom: 2rem;
+    }
+
+    .section-title-main {
+        font-size: 2rem;
+        font-weight: 700;
+        color: var(--dark);
+        margin: 0;
+    }
+
+    .view-all-btn {
+        color: var(--primary);
+        text-decoration: none;
+        font-weight: 600;
+        display: inline-flex;
+        align-items: center;
+        gap: 0.5rem;
+        transition: gap 0.3s ease;
+    }
+
+    .view-all-btn:hover {
+        gap: 0.75rem;
+        color: var(--primary-dark);
+    }
+
+    /* New Arrival Badge */
+    .new-badge {
+        background: linear-gradient(135deg, #10b981 0%, #059669 100%);
+        color: white;
+    }
+
+    /* Sale Badge */
+    .sale-badge {
+        background: linear-gradient(135deg, #ef4444 0%, #dc2626 100%);
+        color: white;
+    }
+
+    /* Special Badge */
+    .special-badge {
+        background: linear-gradient(135deg, #8b5cf6 0%, #7c3aed 100%);
+        color: white;
+    }
+
+    /* Discount Percentage */
+    .discount-percentage {
+        position: absolute;
+        top: 1rem;
+        right: 1rem;
+        background: #ef4444;
+        color: white;
+        padding: 0.25rem 0.5rem;
+        border-radius: 20px;
+        font-size: 0.75rem;
+        font-weight: 600;
+        z-index: 2;
+    }
+
+    /* Product Grid for Special Sections */
+    .special-products-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+        gap: 1.5rem;
+    }
+
   /* Hot Produk */
     :root {
             --primary-color: #2563eb;
@@ -1649,6 +1536,333 @@
             </div>
         </section>
     </div>
+
+    <!-- New Arrival Section -->
+<section id="new-arrival" class="section bg-light">
+    <div class="container">
+        <div class="section-header-flex">
+            <h2 class="section-title-main">New Arrival</h2>
+            <a href="#" class="view-all-btn">
+                Lihat Semua
+                <i class="fas fa-arrow-right"></i>
+            </a>
+        </div>
+        
+        <div class="special-products-grid">
+            <!-- Product 1 -->
+            <div class="product-card">
+                <div class="product-badge new-badge">New</div>
+                <div class="product-image">
+                    <img src="https://images.unsplash.com/photo-1512941937669-90a1b58e7e9c?w=400" alt="Smartwatch Pro">
+                    <div class="product-actions">
+                        <button class="action-btn" title="Tambah ke Wishlist"><i class="far fa-heart"></i></button>
+                        <button class="action-btn" title="Lihat Detail"><i class="far fa-eye"></i></button>
+                    </div>
+                </div>
+                <div class="product-info">
+                    <div class="product-category">Smartwatch</div>
+                    <h3 class="product-title">Smartwatch Pro 2024</h3>
+                    <p>Smartwatch terbaru dengan fitur kesehatan lengkap dan battery life hingga 7 hari.</p>
+                    <div class="product-features">
+                        <span class="feature-tag">AMOLED</span>
+                        <span class="feature-tag">GPS</span>
+                        <span class="feature-tag">Waterproof</span>
+                    </div>
+                    <div class="product-footer">
+                        <div>
+                            <div class="product-price">Rp 2.499.000</div>
+                        </div>
+                        <button class="add-to-cart">
+                            <i class="fas fa-shopping-cart"></i>Keranjang
+                        </button>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Product 2 -->
+            <div class="product-card">
+                <div class="product-badge new-badge">New</div>
+                <div class="product-image">
+                    <img src="https://images.unsplash.com/photo-1593640408182-31c70c8268f5?w=400" alt="DSLR Camera">
+                    <div class="product-actions">
+                        <button class="action-btn" title="Tambah ke Wishlist"><i class="far fa-heart"></i></button>
+                        <button class="action-btn" title="Lihat Detail"><i class="far fa-eye"></i></button>
+                    </div>
+                </div>
+                <div class="product-info">
+                    <div class="product-category">Kamera</div>
+                    <h3 class="product-title">DSLR X2000 Pro</h3>
+                    <p>Kamera DSLR terbaru dengan sensor 45MP dan 8K video recording.</p>
+                    <div class="product-features">
+                        <span class="feature-tag">45MP</span>
+                        <span class="feature-tag">8K Video</span>
+                        <span class="feature-tag">WiFi</span>
+                    </div>
+                    <div class="product-footer">
+                        <div>
+                            <div class="product-price">Rp 18.999.000</div>
+                        </div>
+                        <button class="add-to-cart">
+                            <i class="fas fa-shopping-cart"></i>Keranjang
+                        </button>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Product 3 -->
+            <div class="product-card">
+                <div class="product-badge new-badge">New</div>
+                <div class="product-image">
+                    <img src="https://images.unsplash.com/photo-1605236453806-6ff36851218e?w=400" alt="Wireless Speaker">
+                    <div class="product-actions">
+                        <button class="action-btn" title="Tambah ke Wishlist"><i class="far fa-heart"></i></button>
+                        <button class="action-btn" title="Lihat Detail"><i class="far fa-eye"></i></button>
+                    </div>
+                </div>
+                <div class="product-info">
+                    <div class="product-category">Audio</div>
+                    <h3 class="product-title">Wireless Speaker Max</h3>
+                    <p>Speaker Bluetooth dengan sound quality terbaik dan battery 20 jam.</p>
+                    <div class="product-features">
+                        <span class="feature-tag">360° Sound</span>
+                        <span class="feature-tag">20h Battery</span>
+                        <span class="feature-tag">IP67</span>
+                    </div>
+                    <div class="product-footer">
+                        <div>
+                            <div class="product-price">Rp 1.799.000</div>
+                        </div>
+                        <button class="add-to-cart">
+                            <i class="fas fa-shopping-cart"></i>Keranjang
+                        </button>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </div>
+</section>
+
+<!-- Special For You Section -->
+<section id="special-for-you" class="section">
+    <div class="container">
+        <div class="section-header-flex">
+            <h2 class="section-title-main">Special For You</h2>
+            <a href="#" class="view-all-btn">
+                Lihat Semua
+                <i class="fas fa-arrow-right"></i>
+            </a>
+        </div>
+        
+        <div class="special-products-grid">
+            <!-- Product 1 -->
+            <div class="product-card">
+                <div class="product-badge special-badge">Special</div>
+                <div class="product-image">
+                    <img src="https://images.unsplash.com/photo-1511707171634-5f897ff02aa9?w=400" alt="Smartphone Pro">
+                    <div class="product-actions">
+                        <button class="action-btn" title="Tambah ke Wishlist"><i class="far fa-heart"></i></button>
+                        <button class="action-btn" title="Lihat Detail"><i class="far fa-eye"></i></button>
+                    </div>
+                </div>
+                <div class="product-info">
+                    <div class="product-category">Smartphone</div>
+                    <h3 class="product-title">Smartphone Pro Max</h3>
+                    <p>Spesial untuk Anda! Smartphone flagship dengan harga terbaik.</p>
+                    <div class="product-features">
+                        <span class="feature-tag">128GB</span>
+                        <span class="feature-tag">5G</span>
+                        <span class="feature-tag">Triple Camera</span>
+                    </div>
+                    <div class="product-footer">
+                        <div>
+                            <div class="product-price">Rp 8.999.000</div>
+                            <div class="discount">Rp 10.999.000</div>
+                        </div>
+                        <button class="add-to-cart">
+                            <i class="fas fa-shopping-cart"></i>Keranjang
+                        </button>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Product 2 -->
+            <div class="product-card">
+                <div class="product-badge special-badge">Special</div>
+                <div class="product-image">
+                    <img src="https://images.unsplash.com/photo-1546868871-7041f2a55e12?w=400" alt="Smartwatch">
+                    <div class="product-actions">
+                        <button class="action-btn" title="Tambah ke Wishlist"><i class="far fa-heart"></i></button>
+                        <button class="action-btn" title="Lihat Detail"><i class="far fa-eye"></i></button>
+                    </div>
+                </div>
+                <div class="product-info">
+                    <div class="product-category">Smartwatch</div>
+                    <h3 class="product-title">Smartwatch Fit Pro</h3>
+                    <p>Spesial diskon untuk kesehatan dan fitness Anda.</p>
+                    <div class="product-features">
+                        <span class="feature-tag">Health Monitor</span>
+                        <span class="feature-tag">Sport Mode</span>
+                        <span class="feature-tag">7 Days</span>
+                    </div>
+                    <div class="product-footer">
+                        <div>
+                            <div class="product-price">Rp 1.299.000</div>
+                            <div class="discount">Rp 1.799.000</div>
+                        </div>
+                        <button class="add-to-cart">
+                            <i class="fas fa-shopping-cart"></i>Keranjang
+                        </button>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Product 3 -->
+            <div class="product-card">
+                <div class="product-badge special-badge">Special</div>
+                <div class="product-image">
+                    <img src="https://images.unsplash.com/photo-1560769624-7a8f7c6d46e7?w=400" alt="Gaming Headset">
+                    <div class="product-actions">
+                        <button class="action-btn" title="Tambah ke Wishlist"><i class="far fa-heart"></i></button>
+                        <button class="action-btn" title="Lihat Detail"><i class="far fa-eye"></i></button>
+                    </div>
+                </div>
+                <div class="product-info">
+                    <div class="product-category">Gaming</div>
+                    <h3 class="product-title">Gaming Headset Pro</h3>
+                    <p>Spesial untuk gamers dengan surround sound 7.1.</p>
+                    <div class="product-features">
+                        <span class="feature-tag">7.1 Surround</span>
+                        <span class="feature-tag">RGB</span>
+                        <span class="feature-tag">Noise Cancel</span>
+                    </div>
+                    <div class="product-footer">
+                        <div>
+                            <div class="product-price">Rp 899.000</div>
+                            <div class="discount">Rp 1.299.000</div>
+                        </div>
+                        <button class="add-to-cart">
+                            <i class="fas fa-shopping-cart"></i>Keranjang
+                        </button>
+                    </div>
+                </div>
+            </div>
+          
+        </div>
+    </div>
+</section>
+
+<!-- On Sale Section -->
+<section id="on-sale" class="section bg-light">
+    <div class="container">
+        <div class="section-header-flex">
+            <h2 class="section-title-main">On Sale</h2>
+            <a href="#" class="view-all-btn">
+                Lihat Semua
+                <i class="fas fa-arrow-right"></i>
+            </a>
+        </div>
+        
+        <div class="special-products-grid">
+            <!-- Product 1 -->
+            <div class="product-card">
+                <div class="product-badge sale-badge">Sale</div>
+                <div class="discount-percentage">-30%</div>
+                <div class="product-image">
+                    <img src="https://images.unsplash.com/photo-1496181133206-80ce9b88a853?w=400" alt="Laptop Ultra">
+                    <div class="product-actions">
+                        <button class="action-btn" title="Tambah ke Wishlist"><i class="far fa-heart"></i></button>
+                        <button class="action-btn" title="Lihat Detail"><i class="far fa-eye"></i></button>
+                    </div>
+                </div>
+                <div class="product-info">
+                    <div class="product-category">Laptop</div>
+                    <h3 class="product-title">Laptop Ultra Slim</h3>
+                    <p>Diskon spesial! Laptop ultra slim dengan performa tinggi.</p>
+                    <div class="product-features">
+                        <span class="feature-tag">i7 12th Gen</span>
+                        <span class="feature-tag">16GB RAM</span>
+                        <span class="feature-tag">512GB SSD</span>
+                    </div>
+                    <div class="product-footer">
+                        <div>
+                            <div class="product-price">Rp 12.999.000</div>
+                            <div class="discount">Rp 18.499.000</div>
+                        </div>
+                        <button class="add-to-cart">
+                            <i class="fas fa-shopping-cart"></i>Keranjang
+                        </button>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Product 2 -->
+            <div class="product-card">
+                <div class="product-badge sale-badge">Sale</div>
+                <div class="discount-percentage">-40%</div>
+                <div class="product-image">
+                    <img src="https://images.unsplash.com/photo-1590658268037-6bf12165a8df?w=400" alt="Wireless Earbuds">
+                    <div class="product-actions">
+                        <button class="action-btn" title="Tambah ke Wishlist"><i class="far fa-heart"></i></button>
+                        <button class="action-btn" title="Lihat Detail"><i class="far fa-eye"></i></button>
+                    </div>
+                </div>
+                <div class="product-info">
+                    <div class="product-category">Audio</div>
+                    <h3 class="product-title">Wireless Earbuds Pro</h3>
+                    <p>Diskon besar! Earbuds dengan noise cancellation aktif.</p>
+                    <div class="product-features">
+                        <span class="feature-tag">ANC</span>
+                        <span class="feature-tag">30h Case</span>
+                        <span class="feature-tag">Wireless Charge</span>
+                    </div>
+                    <div class="product-footer">
+                        <div>
+                            <div class="product-price">Rp 1.199.000</div>
+                            <div class="discount">Rp 1.999.000</div>
+                        </div>
+                        <button class="add-to-cart">
+                            <i class="fas fa-shopping-cart"></i>Keranjang
+                        </button>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Product 3 -->
+            <div class="product-card">
+                <div class="product-badge sale-badge">Sale</div>
+                <div class="discount-percentage">-25%</div>
+                <div class="product-image">
+                    <img src="https://images.unsplash.com/photo-1526170375885-4d8ecf77b99f?w=400" alt="Action Camera">
+                    <div class="product-actions">
+                        <button class="action-btn" title="Tambah ke Wishlist"><i class="far fa-heart"></i></button>
+                        <button class="action-btn" title="Lihat Detail"><i class="far fa-eye"></i></button>
+                    </div>
+                </div>
+                <div class="product-info">
+                    <div class="product-category">Kamera</div>
+                    <h3 class="product-title">Action Camera 4K</h3>
+                    <p>Harga spesial! Kamera aksi 4K untuk petualangan Anda.</p>
+                    <div class="product-features">
+                        <span class="feature-tag">4K 60fps</span>
+                        <span class="feature-tag">Waterproof</span>
+                        <span class="feature-tag">WiFi</span>
+                    </div>
+                    <div class="product-footer">
+                        <div>
+                            <div class="product-price">Rp 3.749.000</div>
+                            <div class="discount">Rp 4.999.000</div>
+                        </div>
+                        <button class="add-to-cart">
+                            <i class="fas fa-shopping-cart"></i>Keranjang
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
         <!-- kelebihan -->
        <div class="container">
         <h2 class="section-title mt-2">Kenapa harus membeli di Barcom? </h2>
