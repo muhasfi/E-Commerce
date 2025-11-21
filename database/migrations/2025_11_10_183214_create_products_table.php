@@ -22,6 +22,10 @@ return new class extends Migration
             $table->decimal('discount_price', 12, 2)->nullable();
             $table->string('image')->nullable(); // gambar utama
             $table->boolean('is_active')->default(true);
+
+            $table->boolean('is_best_seller')->default(false);
+            $table->boolean('is_power_deals')->default(false);
+            $table->boolean('is_special')->default(false);
             $table->timestamps();
             $table->softDeletes();
         });

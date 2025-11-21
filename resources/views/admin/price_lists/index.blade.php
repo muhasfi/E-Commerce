@@ -1,5 +1,5 @@
 @extends('admin.layouts.master')
-@section('title', 'Daftar Product')
+@section('title', 'Daftar PDF Pricelist')
 
 @section('css')
 <link rel="stylesheet" href="{{ asset('assets/admin/extensions/simple-datatables/style.css') }}">
@@ -11,11 +11,12 @@
     <div class="page-title">
         <div class="row">
             <div class="col-12 col-md-6 order-md-1 order-last">
-                <h3>Daftar Product</h3>
+                <h3>Daftar PDF Pricelist</h3>
             </div>
             <div class="col-12 col-md-6 order-md-2 order-first">
-                <a href="{{ route('admin.products.create') }}" class="btn btn-primary float-start float-lg-end">
-                    <i class="bi bi-plus"></i> Tambah Product
+                <a href="{{ route('admin.price_lists.create') }}" class="btn btn-primary float-start float-lg-end">
+                    <i class="bi bi-plus"></i>
+                    Tambah PDF
                 </a>
             </div>
         </div>
@@ -24,10 +25,10 @@
     <section class="section">
         <div class="card">
             <div class="card-body">
-                @if(session('success'))
+                @if (session('success'))
                     <div class="alert alert-success alert-dismissible fade show" role="alert">
                         <p><i class="bi bi-check-circle-fill"></i> {{ session('success') }}</p>
-                        <button type="button" class="btn-close" data-bs-dismiss="alert"></button>
+                        <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
                     </div>
                 @endif
 
@@ -35,62 +36,41 @@
                     <thead>
                         <tr>
                             <th>No</th>
-                            <th>Gambar</th>
-                            <th>Nama Product</th>
-                            <th>Category</th>
-                            <th>Brand</th>
-                            <th>Harga</th>
-                            <th>Harga Diskon</th>
-                            <th>Status</th>
-                            <th colspan="3">Aksi</th>
+                            <th>Nama PDF</th>
+                            <th>File</th>
+                            <th>Aksi</th>
                         </tr>
                     </thead>
                     <tbody>
-                        @foreach($products as $product)
+                        @foreach ($pdfs as $pdf)
                         <tr>
                             <td>{{ $loop->iteration }}</td>
+                            <td>{{ $pdf->name }}</td>
                             <td>
-                                @if($product->image)
-                                    <img src="{{ asset('storage/' . $product->image) }}" width="60" class="img-fluid rounded" alt="{{ $product->name }}" onerror="this.onerror=null;this.src='';">
-                                @else
-                                    <img src="" width="60" class="img-fluid rounded" alt="Default">
-                                @endif
-                            </td>
-                            <td>{{ $product->name }}</td>
-                            <td>{{ $product->category->name ?? '-' }}</td>
-                            <td>{{ $product->brand->name ?? '-' }}</td>
-                            <td>{{ number_format($product->price, 0, ',', '.') }}</td>
-                            <td>{{ $product->discount_price ? number_format($product->discount_price, 0, ',', '.') : '-' }}</td>
-                            <td>
-                                <span class="badge {{ $product->is_active ? 'bg-success' : 'bg-danger' }}">
-                                    {{ $product->is_active ? 'Aktif' : 'Tidak Aktif' }}
-                                </span>
+                                <a href="{{ Storage::url($pdf->file) }}" target="_blank" class="text-primary text-decoration-underline">
+                                    Lihat File
+                                </a>
                             </td>
                             <td>
-                                <a href="{{ route('admin.products.edit', $product->id) }}" class="btn btn-warning btn-sm">
+                                <a href="{{ route('admin.price_lists.edit', $pdf->id) }}" class="btn btn-warning btn-sm">
                                     <i class="bi bi-pencil"></i> Ubah
                                 </a>
-                                <form action="{{ route('admin.products.destroy', $product->id) }}" method="POST" class="d-inline delete-form">
+                            
+                                <form action="{{ route('admin.price_lists.destroy', $pdf->id) }}" method="POST" class="d-inline delete-form">
                                     @csrf
                                     @method('DELETE')
                                     <button type="submit" class="btn btn-danger btn-sm delete-btn">
                                         <i class="bi bi-trash"></i> Hapus
                                     </button>
                                 </form>
-                                <a href="{{ route('admin.products.show', $product->id) }}" 
-                                   class="btn btn-sm btn-info">
-                                    <i class="bi bi-eye"></i> Lihat
+                                <a href="{{ route('admin.price_lists.show', $pdf->id) }}" class="btn btn-info btn-sm">
+                                    <i class="bi bi-eye"></i> Flipbook
                                 </a>
                             </td>
                         </tr>
                         @endforeach
                     </tbody>
                 </table>
-
-                {{-- Pagination --}}
-                <div class="mt-3">
-                    {{ $products->links() }}
-                </div>
             </div>
         </div>
     </section>
