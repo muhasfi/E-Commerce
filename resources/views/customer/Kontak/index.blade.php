@@ -1,9 +1,6 @@
 @extends('layouts.master')
 
 @section('title', 'Tentang Kami - Barcom')
-
-@section('style')
-
     <style>
         :root {
             --primary-color: #f59e0b;
@@ -118,7 +115,7 @@
             }
         }
     </style>
-@endsection
+
 <body>
     <!-- Section Hubungi Kami -->
     <section class="contact-section">
